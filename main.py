@@ -10,6 +10,7 @@ class Ui_MainWindow(QtGui.QMainWindow):
 	self.label.setText(db.get("saludo"))
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    windo = Ui_MainWindow()
-    windo.show()
+    window = Ui_MainWindow()
+    window.show()
     sys.exit(app.exec_())
+ 
