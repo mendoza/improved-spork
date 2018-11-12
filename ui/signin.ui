@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>392</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Registro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/pill.png</normaloff>images/pill.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>COF</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/pill.png</normaloff>images/pill.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLineEdit" name="id_edit">
