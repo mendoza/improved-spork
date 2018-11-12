@@ -5,6 +5,7 @@ from functools import partial
 import hashlib
 from registro import ui_registro
 from main import MainWindow
+'''me gusta las piernas de papitopiernaslargas69'''
 
 
 class InicioWindow(QtGui.QDialog):
@@ -58,9 +59,9 @@ class InicioWindow(QtGui.QDialog):
         self.bt_login.clicked.connect(partial(self.login))
         self.bt_signin.clicked.connect(partial(self.signin))
 
-
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     window = InicioWindow()
     window.show()
     sys.exit(app.exec_())
+

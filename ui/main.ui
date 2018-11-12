@@ -13,32 +13,162 @@
   <property name="windowTitle">
    <string>Farmacias Simon</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/pill.png</normaloff>images/pill.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>270</y>
-      <width>151</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>WENAS :v</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="widget">
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <attribute name="title">
+        <string>Farmacias</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QToolBox" name="toolBox_2">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>760</width>
+             <height>469</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Crear</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page_6">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>760</width>
+             <height>469</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Eliminar</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Productos">
+       <attribute name="title">
+        <string>Productos</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QToolBox" name="toolBox">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <widget class="QWidget" name="page_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>760</width>
+             <height>438</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Lista de Productos</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>760</width>
+             <height>438</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Pedir Productos</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page_7">
+           <attribute name="label">
+            <string>Eliminar Productos</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Farmaceuticos</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QToolBox" name="toolBox_3">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_8">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>754</width>
+             <height>469</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Lista de Farmaceuticos</string>
+           </attribute>
+          </widget>
+          <widget class="QWidget" name="page_9">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>754</width>
+             <height>469</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Despedir Farmaceuticos</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

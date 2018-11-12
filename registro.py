@@ -3,7 +3,7 @@ import redis
 from PyQt4 import QtCore, QtGui, uic
 from functools import partial
 
-
+    
 class ui_registro(QtGui.QDialog):
     def signin(self):
         # if aqui para validar :v
@@ -29,7 +29,7 @@ class ui_registro(QtGui.QDialog):
             if self.rb_masculino.isChecked():
                 self.usuario["sexo"] = "masculino"
             elif self.rb_femenino.isChecked():
-                self.usuario["sexo"] = "masculino"
+                self.usuario["sexo"] = "femenino"
             elif self.rb_otro.isChecked():
                 self.usuario["sexo"] = "otro"
             else:

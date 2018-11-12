@@ -48,7 +48,7 @@
    <item>
     <widget class="QPushButton" name="bt_signin">
      <property name="text">
-      <string>registrate</string>
+      <string>Registrate</string>
      </property>
     </widget>
    </item>

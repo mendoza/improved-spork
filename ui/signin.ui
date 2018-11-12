@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>392</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,9 @@
   <property name="windowIcon">
    <iconset>
     <normaloff>images/pill.png</normaloff>images/pill.png</iconset>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -91,6 +94,26 @@
     <widget class="QLineEdit" name="password_edit">
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>********</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Contraseña Maistra</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="ContraMaistra_edit">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>********</string>
      </property>
     </widget>
    </item>
