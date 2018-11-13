@@ -4,7 +4,7 @@ from PyQt4 import QtCore, QtGui, uic
 from functools import partial
 import hashlib
 from registro import ui_registro
-from main import MainWindow
+from main_farmacia import MainWindow
 '''me gusta las piernas de papitopiernaslargas69'''
 
 

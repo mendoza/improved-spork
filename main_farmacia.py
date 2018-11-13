@@ -7,7 +7,7 @@ class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         QtGui.QMainWindow.__init__(self)
-        uic.loadUi("./ui/main.ui", self)
+        uic.loadUi("./ui/Farmacia.ui", self)
         db = redis.StrictRedis(
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
