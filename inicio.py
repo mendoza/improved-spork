@@ -4,7 +4,7 @@ from PyQt4 import QtCore, QtGui, uic
 from functools import partial
 import hashlib
 from registro import ui_registro
-from main_farmacia import MainWindow
+from main_farmacia import MainWindowFarmacia
 '''me gusta las piernas de papitopiernaslargas69'''
 
 
@@ -24,7 +24,7 @@ class InicioWindow(QtGui.QDialog):
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
                     window = QtGui.QMainWindow()
-                    ui = MainWindow()
+                    ui = MainWindowFarmacia()
                     ui.show()
                     self.close()
                     sys.exit(ui.exec_())
@@ -59,9 +59,9 @@ class InicioWindow(QtGui.QDialog):
         self.bt_login.clicked.connect(partial(self.login))
         self.bt_signin.clicked.connect(partial(self.signin))
 
+
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     window = InicioWindow()
     window.show()
     sys.exit(app.exec_())
-

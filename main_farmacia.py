@@ -3,9 +3,9 @@ import redis
 from PyQt4 import QtCore, QtGui, uic
 
 
-class MainWindow(QtGui.QMainWindow):
+class MainWindowFarmacia(QtGui.QMainWindow):
     def __init__(self):
-        super(MainWindow, self).__init__()
+        super(MainWindowFarmacia, self).__init__()
         QtGui.QMainWindow.__init__(self)
         uic.loadUi("./ui/Farmacia.ui", self)
         db = redis.StrictRedis(
@@ -15,6 +15,6 @@ class MainWindow(QtGui.QMainWindow):
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    window = MainWindow()
+    window = MainWindowFarmacia()
     window.show()
     sys.exit(app.exec_())
