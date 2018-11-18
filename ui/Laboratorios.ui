@@ -22,7 +22,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -46,7 +46,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QListWidget" name="listWidget"/>
+          <widget class="QListWidget" name="LabsE_list"/>
          </item>
         </layout>
        </widget>
@@ -82,7 +82,7 @@
               <x>0</x>
               <y>0</y>
               <width>111</width>
-              <height>371</height>
+              <height>361</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -147,33 +147,36 @@
            <widget class="QWidget" name="verticalLayoutWidget_3">
             <property name="geometry">
              <rect>
-              <x>120</x>
+              <x>110</x>
               <y>0</y>
               <width>621</width>
-              <height>371</height>
+              <height>361</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QLineEdit" name="lineEdit_2"/>
+              <widget class="QLineEdit" name="IDP_Edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_5"/>
+              <widget class="QLineEdit" name="NombreP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_4"/>
+              <widget class="QLineEdit" name="FabricanteP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_3"/>
+              <widget class="QLineEdit" name="CostoVP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_6"/>
+              <widget class="QLineEdit" name="Coste_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_7"/>
+              <widget class="QLineEdit" name="UnidadP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit"/>
+              <widget class="QLineEdit" name="SeguridadP_edit"/>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="MinimoP_edit"/>
              </item>
             </layout>
            </widget>
@@ -188,7 +191,7 @@
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="CrearP_bt">
                <property name="text">
                 <string>Crear</string>
                </property>
@@ -202,8 +205,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>760</width>
+             <height>469</height>
             </rect>
            </property>
            <attribute name="label">
@@ -220,7 +223,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <widget class="QListView" name="listView"/>
+              <widget class="QTableWidget" name="ProductosD_tb"/>
              </item>
             </layout>
            </widget>
@@ -234,7 +237,7 @@
              </rect>
             </property>
             <property name="text">
-             <string>ESTO ES SOLO UNA IDEA. ES UNA LISTA</string>
+             <string>ESTO ES SOLO UNA IDEA. ES UNA TABLA</string>
             </property>
            </widget>
           </widget>
@@ -266,8 +269,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>779</width>
+              <height>487</height>
              </rect>
             </property>
             <attribute name="label">
@@ -297,7 +300,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
-               <widget class="QListView" name="listView_2"/>
+               <widget class="QListView" name="VentaP_list"/>
               </item>
              </layout>
             </widget>
@@ -338,7 +341,7 @@
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_9">
               <item>
-               <widget class="QListView" name="listView_3"/>
+               <widget class="QListView" name="PedidosR_list"/>
               </item>
              </layout>
             </widget>
