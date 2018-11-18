@@ -131,6 +131,9 @@
        <property name="text">
         <string>Masculino</string>
        </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -148,6 +151,50 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Departamento</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QRadioButton" name="rb_laboratorio">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>382</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Laboratorio</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rb_farmacia">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>0</y>
+        <width>382</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Farmacia</string>
+      </property>
+     </widget>
+     <zorder>rb_laboratorio</zorder>
+     <zorder>rb_farmacia</zorder>
+     <zorder>rb_laboratorio</zorder>
+     <zorder>rb_farmacia</zorder>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
