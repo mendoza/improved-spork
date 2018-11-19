@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import sys
+
 reload(sys)
-sys.setdefaultencoding('utf8')
+sys.setdefaultencoding("utf8")
 import redis
 from PyQt4 import QtCore, QtGui, uic
 
 
-class MainWindowFarmacia(QtGui.QMainWindow):
-
+class MainWindowBodega(QtGui.QMainWindow):
     def __init__(self):
         super(MainWindowBodega, self).__init__()
         QtGui.QMainWindow.__init__(self)
