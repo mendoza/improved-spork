@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>450</height>
+    <height>493</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -127,7 +127,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QRadioButton" name="rb_masculino">
+      <widget class="QRadioButton" name="masculino_rb">
        <property name="text">
         <string>Masculino</string>
        </property>
@@ -137,14 +137,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="rb_femenino">
+      <widget class="QRadioButton" name="femenino_rb">
        <property name="text">
         <string>Femenino</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="rb_otro">
+      <widget class="QRadioButton" name="otro_rb">
        <property name="text">
         <string>Otro</string>
        </property>
@@ -164,7 +164,7 @@
      <property name="title">
       <string/>
      </property>
-     <widget class="QRadioButton" name="rb_laboratorio">
+     <widget class="QRadioButton" name="laboratorio_rb">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -177,7 +177,7 @@
        <string>Laboratorio</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="rb_farmacia">
+     <widget class="QRadioButton" name="farmacia_rb">
       <property name="geometry">
        <rect>
         <x>100</x>
@@ -190,16 +190,12 @@
        <string>Farmacia</string>
       </property>
      </widget>
-     <zorder>rb_laboratorio</zorder>
-     <zorder>rb_farmacia</zorder>
-     <zorder>rb_laboratorio</zorder>
-     <zorder>rb_farmacia</zorder>
     </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="bt_registro">
+      <widget class="QPushButton" name="registro_bt">
        <property name="text">
         <string>Registrarte</string>
        </property>

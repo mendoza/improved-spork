@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>668</width>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -31,10 +31,10 @@
        <widget class="QWidget" name="verticalLayoutWidget_7">
         <property name="geometry">
          <rect>
-          <x>-1</x>
-          <y>9</y>
-          <width>781</width>
-          <height>541</height>
+          <x>0</x>
+          <y>10</y>
+          <width>611</width>
+          <height>511</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -69,8 +69,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>469</height>
+             <width>628</width>
+             <height>463</height>
             </rect>
            </property>
            <attribute name="label">
@@ -138,7 +138,7 @@
              <item>
               <widget class="QLabel" name="label_8">
                <property name="text">
-                <string>Minimo:</string>
+                <string>Familia:</string>
                </property>
               </widget>
              </item>
@@ -149,7 +149,7 @@
              <rect>
               <x>110</x>
               <y>0</y>
-              <width>621</width>
+              <width>491</width>
               <height>361</height>
              </rect>
             </property>
@@ -161,7 +161,7 @@
               <widget class="QLineEdit" name="NombreP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="FabricanteP_edit"/>
+              <widget class="QComboBox" name="Fabricante_cb"/>
              </item>
              <item>
               <widget class="QLineEdit" name="CostoVP_edit"/>
@@ -176,7 +176,7 @@
               <widget class="QLineEdit" name="SeguridadP_edit"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="MinimoP_edit"/>
+              <widget class="QComboBox" name="Familia_cb"/>
              </item>
             </layout>
            </widget>
@@ -205,7 +205,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
+             <width>628</width>
              <height>469</height>
             </rect>
            </property>
@@ -217,28 +217,22 @@
              <rect>
               <x>9</x>
               <y>19</y>
-              <width>481</width>
+              <width>561</width>
               <height>431</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Productos listos para venta:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QTableWidget" name="ProductosD_tb"/>
              </item>
             </layout>
-           </widget>
-           <widget class="QLabel" name="label_9">
-            <property name="geometry">
-             <rect>
-              <x>490</x>
-              <y>60</y>
-              <width>271</width>
-              <height>81</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>ESTO ES SOLO UNA IDEA. ES UNA TABLA</string>
-            </property>
            </widget>
           </widget>
          </widget>
@@ -262,7 +256,7 @@
          <item>
           <widget class="QToolBox" name="toolBox_2">
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="page_3">
             <property name="geometry">
@@ -286,7 +280,7 @@
               </rect>
              </property>
              <property name="text">
-              <string>SOLO UNA IDEA DE PRUEBA. ES UNA LISTA</string>
+              <string>Ventas Realizadas:</string>
              </property>
             </widget>
             <widget class="QWidget" name="verticalLayoutWidget_5">
@@ -294,8 +288,8 @@
               <rect>
                <x>20</x>
                <y>60</y>
-               <width>361</width>
-               <height>271</height>
+               <width>591</width>
+               <height>401</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -320,23 +314,23 @@
             <widget class="QLabel" name="label_11">
              <property name="geometry">
               <rect>
-               <x>60</x>
-               <y>30</y>
-               <width>181</width>
+               <x>20</x>
+               <y>10</y>
+               <width>291</width>
                <height>17</height>
               </rect>
              </property>
              <property name="text">
-              <string>OTRA LISTA DE PRUEBA</string>
+              <string>Pedidos que recibio la farmacia</string>
              </property>
             </widget>
             <widget class="QWidget" name="verticalLayoutWidget_6">
              <property name="geometry">
               <rect>
-               <x>19</x>
-               <y>79</y>
-               <width>391</width>
-               <height>331</height>
+               <x>20</x>
+               <y>40</y>
+               <width>541</width>
+               <height>431</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -346,6 +340,55 @@
              </layout>
             </widget>
            </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Familia</string>
+       </attribute>
+       <widget class="QWidget" name="verticalLayoutWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>571</width>
+          <height>421</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Lista de Familias de Productos</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListView" name="listView"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>440</y>
+          <width>571</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="Familia_edit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>Crear familia</string>
+           </property>
           </widget>
          </item>
         </layout>

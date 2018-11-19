@@ -1,21 +1,26 @@
+# -*- coding: utf-8 -*-
 import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 import redis
 from PyQt4 import QtCore, QtGui, uic
 from functools import partial
 import hashlib
 from registro import ui_registro
 from main_farmacia import MainWindowFarmacia
+from main_lab import MainWindowLab
+from main_bodega import MainWindowBodega
 '''me gusta las piernas de papitopiernaslargas69'''
 
 
 class InicioWindow(QtGui.QDialog):
     def login(self):
-        identidad = self.id_edit.text()
-        password = self.password_edit.text()
+        identidad = str(self.id_edit.text())
+        password = str(self.password_edit.text())
         if self.existencia("personas", identidad):
             if (
-                self.db.hmget(identidad, "identidad")[0] == identidad
-                and self.db.hmget(identidad, "password")[0] == password
+                str(self.db.hmget(identidad, "identidad")[0]) == identidad
+                and str(self.db.hmget(identidad, "password")[0]) == password
             ):
                 msg = QtGui.QMessageBox()
                 msg.setIcon(QtGui.QMessageBox.Information)
@@ -23,11 +28,27 @@ class InicioWindow(QtGui.QDialog):
                 msg.setWindowTitle("Ingreso Exiosamente")
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
-                    window = QtGui.QMainWindow()
-                    ui = MainWindowFarmacia()
-                    ui.show()
-                    self.close()
-                    sys.exit(ui.exec_())
+                    print(self.db.hmget(identidad,"departamento"))
+                    if self.db.hmget(identidad,"departamento")[0] == "farmacia":
+                        window = QtGui.QMainWindow()
+                        ui = MainWindowFarmacia()
+                        ui.show()
+                        self.close()
+                        sys.exit(ui.exec_())
+                    elif self.db.hmget(identidad,"departamento")[0] == "laboratorio":
+                        window = QtGui.QMainWindow()
+                        ui = MainWindowLab()
+                        ui.show()
+                        self.close()
+                        sys.exit(ui.exec_())
+                    elif self.db.hmget(identidad,"departamento")[0] == "bodega":
+                        window = QtGui.QMainWindow()
+                        ui = MainWindowBodega()
+                        ui.show()
+                        self.close()
+                        sys.exit(ui.exec_())
+                    else:
+                        return
             else:
                 print("no entro")
         else:
