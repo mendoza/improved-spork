@@ -4,11 +4,14 @@ from PyQt4 import QtCore, QtGui, uic
 
 
 class MainWindowFarmacia(QtGui.QMainWindow):
+    def metodos(self):
+        pass
+
     def __init__(self):
         super(MainWindowFarmacia, self).__init__()
         QtGui.QMainWindow.__init__(self)
         uic.loadUi("./ui/Bodega.ui", self)
-        db = redis.StrictRedis(
+        self.db = redis.StrictRedis(
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
 
