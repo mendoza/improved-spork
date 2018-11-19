@@ -22,7 +22,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -35,15 +35,15 @@
         <item>
          <widget class="QToolBox" name="farmacia_toolbox">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="widget_2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>760</width>
+             <height>469</height>
             </rect>
            </property>
            <attribute name="label">
@@ -226,8 +226,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>100</width>
+             <height>30</height>
             </rect>
            </property>
            <attribute name="label">
@@ -304,8 +304,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>100</width>
+             <height>30</height>
             </rect>
            </property>
            <attribute name="label">
@@ -373,15 +373,20 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
+          <widget class="QWidget" name="page">
+           <attribute name="label">
+            <string>Contratar Farmaceutico</string>
+           </attribute>
+          </widget>
           <widget class="QWidget" name="page_8">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>254</width>
-             <height>95</height>
+             <width>760</width>
+             <height>407</height>
             </rect>
            </property>
            <attribute name="label">
@@ -426,7 +431,7 @@
             <string/>
            </property>
            <attribute name="label">
-            <string>EnviarFarmaceutico a La Bodega</string>
+            <string>Enviar Farmaceutico a La Bodega</string>
            </attribute>
            <widget class="QWidget" name="verticalLayoutWidget_7">
             <property name="geometry">
@@ -478,8 +483,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>253</width>
-             <height>93</height>
+             <width>760</width>
+             <height>438</height>
             </rect>
            </property>
            <attribute name="label">
@@ -487,7 +492,14 @@
            </attribute>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QTableWidget" name="farmaceuticos_table"/>
+             <widget class="QTableWidget" name="farmaceuticos_table">
+              <property name="minimumSize">
+               <size>
+                <width>582</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_4">
