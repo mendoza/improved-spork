@@ -6,14 +6,8 @@ import redis
 from PyQt4 import QtCore, QtGui, uic
 
 
-<<<<<<< HEAD
-class MainWindowBodega(QtGui.QMainWindow):
-=======
 class MainWindowFarmacia(QtGui.QMainWindow):
-    def metodos(self):
-        pass
 
->>>>>>> a38be0fdc4812f3d43d21f557dae45f0e011d567
     def __init__(self):
         super(MainWindowBodega, self).__init__()
         QtGui.QMainWindow.__init__(self)
