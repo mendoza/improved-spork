@@ -15,14 +15,14 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../.designer/backup/images/pill.png</normaloff>../../../../.designer/backup/images/pill.png</iconset>
+    <normaloff>../../../../../../.designer/backup/images/pill.png</normaloff>../../../../../../.designer/backup/images/pill.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -97,7 +97,7 @@
              <item>
               <widget class="QLabel" name="label_3">
                <property name="text">
-                <string>Ubicacion Farmacia:</string>
+                <string>Direccion Farmacia:</string>
                </property>
               </widget>
              </item>
@@ -109,8 +109,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>469</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
            <attribute name="label">
@@ -169,15 +169,15 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page_3">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
            <attribute name="label">
@@ -226,8 +226,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
            <attribute name="label">
@@ -304,8 +304,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>30</height>
+             <width>760</width>
+             <height>438</height>
             </rect>
            </property>
            <attribute name="label">
@@ -373,20 +373,65 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>Contratar Farmaceutico</string>
            </attribute>
+           <widget class="QWidget" name="verticalLayoutWidget_15">
+            <property name="geometry">
+             <rect>
+              <x>19</x>
+              <y>10</y>
+              <width>401</width>
+              <height>391</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_21">
+             <item>
+              <widget class="QListView" name="contrafarm_list"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="verticalLayoutWidget_16">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>170</y>
+              <width>321</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Farmacia:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="contrafarm_cb"/>
+             </item>
+            </layout>
+           </widget>
           </widget>
           <widget class="QWidget" name="page_8">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>407</height>
+             <width>254</width>
+             <height>95</height>
             </rect>
            </property>
            <attribute name="label">
@@ -420,8 +465,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -484,7 +529,7 @@
              <x>0</x>
              <y>0</y>
              <width>760</width>
-             <height>438</height>
+             <height>93</height>
             </rect>
            </property>
            <attribute name="label">
@@ -532,15 +577,15 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="widget">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>781</width>
-           <height>479</height>
+           <width>98</width>
+           <height>28</height>
           </rect>
          </property>
          <attribute name="label">
@@ -596,8 +641,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>781</width>
-           <height>479</height>
+           <width>98</width>
+           <height>28</height>
           </rect>
          </property>
          <attribute name="label">
