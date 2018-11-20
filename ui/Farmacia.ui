@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>679</width>
+    <height>412</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <normaloff>../../../../../../.designer/backup/images/pill.png</normaloff>../../../../../../.designer/backup/images/pill.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>2</number>
@@ -35,76 +35,74 @@
         <item>
          <widget class="QToolBox" name="farmacia_toolbox">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="widget_2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>643</width>
+             <height>277</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Crear</string>
            </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget_2">
-            <property name="geometry">
-             <rect>
-              <x>160</x>
-              <y>0</y>
-              <width>591</width>
-              <height>461</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <item>
-              <widget class="QLineEdit" name="nomfarm_edit"/>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ubifarm_edit"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="crearfarm_bt">
-               <property name="text">
-                <string>Crear Farmacia</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>40</y>
-              <width>151</width>
-              <height>251</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_11">
-             <item>
-              <widget class="QLabel" name="label">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="text">
-                <string>Nombre de Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_3">
-               <property name="text">
-                <string>Direccion Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="text">
+                 <string>Nombre de Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Direccion Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QLineEdit" name="nomfarm_edit"/>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="ubifarm_edit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="QPushButton" name="crearfarm_bt">
+                <property name="text">
+                 <string>Crear Farmacia</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_5">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>643</width>
+             <height>277</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>Lista de Farmacias</string>
            </attribute>
@@ -123,47 +121,33 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>643</width>
+             <height>277</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Eliminar</string>
            </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget_3">
-            <property name="geometry">
-             <rect>
-              <x>389</x>
-              <y>70</y>
-              <width>331</width>
-              <height>301</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_12">
-             <item>
-              <widget class="QPushButton" name="borrarfarm_bt">
-               <property name="text">
-                <string>Borrar Farmacia</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_6">
-            <property name="geometry">
-             <rect>
-              <x>60</x>
-              <y>150</y>
-              <width>281</width>
-              <height>80</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_10">
-             <item>
-              <widget class="QComboBox" name="eliminarfarm_cb"/>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QComboBox" name="eliminarfarm_cb"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QPushButton" name="borrarfarm_bt">
+                <property name="text">
+                 <string>Borrar Farmacia</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -190,190 +174,144 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>643</width>
+             <height>277</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Lista de Productos</string>
            </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget_9">
-            <property name="geometry">
-             <rect>
-              <x>520</x>
-              <y>170</y>
-              <width>241</width>
-              <height>111</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_15">
-             <item>
-              <widget class="QLabel" name="label_8">
-               <property name="text">
-                <string>Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="listarprofarm_cb"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_10">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>10</y>
-              <width>481</width>
-              <height>411</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_16">
-             <item>
-              <widget class="QListView" name="listapro_tb"/>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_30">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="listarprofarm_cb"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QListView" name="listapro_tb"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_4">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>630</width>
+             <height>296</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Pedir Productos</string>
            </attribute>
-           <widget class="QListView" name="pedirproductos_list">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>20</y>
-              <width>256</width>
-              <height>381</height>
-             </rect>
-            </property>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_4">
-            <property name="geometry">
-             <rect>
-              <x>350</x>
-              <y>30</y>
-              <width>391</width>
-              <height>162</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_13">
-             <item>
-              <widget class="QLabel" name="label_9">
-               <property name="text">
-                <string>Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="pedirprofarm_cb"/>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_4">
-               <property name="text">
-                <string>Laboratorio</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="laboratoriopro_cb"/>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_5">
-               <property name="text">
-                <string>Cantidad?</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="cantidadpro_spin"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QPushButton" name="pedir_bt">
-            <property name="geometry">
-             <rect>
-              <x>350</x>
-              <y>220</y>
-              <width>381</width>
-              <height>29</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Pedir</string>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_29">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="pedirprofarm_cb"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Laboratorio</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="laboratoriopro_cb"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>Cantidad?</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="cantidadpro_spin"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QListView" name="pedirproductos_list"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pedir_bt">
+              <property name="text">
+               <string>Pedir</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_7">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>438</height>
+             <width>643</width>
+             <height>277</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Eliminar Productos</string>
            </attribute>
-           <widget class="QTableWidget" name="eliproductos_tb">
-            <property name="geometry">
-             <rect>
-              <x>40</x>
-              <y>30</y>
-              <width>351</width>
-              <height>371</height>
-             </rect>
-            </property>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_5">
-            <property name="geometry">
-             <rect>
-              <x>449</x>
-              <y>60</y>
-              <width>271</width>
-              <height>181</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_14">
-             <item>
-              <widget class="QLabel" name="label_10">
-               <property name="text">
-                <string>Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="eliminarprofarm_cb"/>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_6">
-               <property name="text">
-                <string>Cantidad a Borrar del Producto:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="borrarpro_spin"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="borrarpro_bt">
-               <property name="text">
-                <string>Borrar Producto</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_28">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="eliminarprofarm_cb"/>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>Cantidad a Borrar del Producto:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="borrarpro_spin"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="borrarpro_bt">
+                <property name="text">
+                 <string>Borrar Producto</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="eliproductos_tb"/>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -387,71 +325,57 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>407</height>
+             <width>643</width>
+             <height>246</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Contratar Farmaceutico</string>
            </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget_15">
-            <property name="geometry">
-             <rect>
-              <x>19</x>
-              <y>10</y>
-              <width>401</width>
-              <height>391</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_21">
-             <item>
-              <widget class="QListView" name="contrafarm_list"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_16">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>170</y>
-              <width>321</width>
-              <height>71</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_22">
-             <item>
-              <widget class="QLabel" name="label_13">
-               <property name="text">
-                <string>Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="contrafarm_cb"/>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QFormLayout" name="formLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_21">
+              <item>
+               <widget class="QListView" name="contrafarm_list"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="contrafarm_cb"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_8">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>407</height>
+             <width>643</width>
+             <height>246</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Lista de Farmaceuticos</string>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
@@ -479,8 +403,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>407</height>
+             <width>643</width>
+             <height>246</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -492,73 +416,63 @@
            <attribute name="label">
             <string>Enviar Farmaceutico a La Bodega</string>
            </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget_7">
-            <property name="geometry">
-             <rect>
-              <x>360</x>
-              <y>110</y>
-              <width>361</width>
-              <height>141</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item>
-              <widget class="QLabel" name="label_2">
-               <property name="text">
-                <string>Escoga que farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="comboBox"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton">
-               <property name="text">
-                <string>Enviar a la Bodega de la Farmacia</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_8">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>331</width>
-              <height>401</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <item>
-              <widget class="QListView" name="farmabodega_list"/>
-             </item>
-            </layout>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Escoga que farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Enviar a la Bodega de la Farmacia</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QListView" name="farmabodega_list"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="page_9">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>760</width>
-             <height>407</height>
+             <width>639</width>
+             <height>219</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Despedir Farmaceuticos</string>
            </attribute>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QVBoxLayout" name="verticalLayout_20">
             <item>
-             <widget class="QTableWidget" name="despidirfarm_tb">
-              <property name="minimumSize">
-               <size>
-                <width>582</width>
-                <height>0</height>
-               </size>
-              </property>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_18">
+              <item>
+               <widget class="QTableWidget" name="despidirfarm_tb">
+                <property name="minimumSize">
+                 <size>
+                  <width>582</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -581,133 +495,101 @@
        <attribute name="title">
         <string>Socios</string>
        </attribute>
-       <widget class="QToolBox" name="toolBox">
-        <property name="geometry">
-         <rect>
-          <x>2</x>
-          <y>4</y>
-          <width>781</width>
-          <height>541</height>
-         </rect>
-        </property>
-        <property name="currentIndex">
-         <number>1</number>
-        </property>
-        <widget class="QWidget" name="widget">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>781</width>
-           <height>479</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>Añadir Socio</string>
-         </attribute>
-         <widget class="QWidget" name="verticalLayoutWidget_11">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>351</width>
-            <height>451</height>
-           </rect>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="toolBox">
+          <property name="currentIndex">
+           <number>1</number>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_19">
-           <item>
-            <widget class="QTableView" name="anadirsocio_table"/>
-           </item>
-          </layout>
+          <widget class="QWidget" name="widget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>643</width>
+             <height>308</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Añadir Socio</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_27">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>Farmacia</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="addsociofarm_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="addsocio_bt">
+                <property name="text">
+                 <string>Add Socio</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QTableView" name="anadirsocio_table"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>643</width>
+             <height>308</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Borrar Socio</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="borrarsocio_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="borrarsocio_bt">
+                <property name="text">
+                 <string>Eliminar Farmacia</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QListView" name="borrarsocio_list"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
          </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_12">
-          <property name="geometry">
-           <rect>
-            <x>440</x>
-            <y>160</y>
-            <width>241</width>
-            <height>101</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_17">
-           <item>
-            <widget class="QLabel" name="label_11">
-             <property name="text">
-              <string>Farmacia</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="addsociofarm_cb"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="addsocio_bt">
-             <property name="text">
-              <string>Add Socio</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="page_2">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>781</width>
-           <height>479</height>
-          </rect>
-         </property>
-         <attribute name="label">
-          <string>Borrar Socio</string>
-         </attribute>
-         <widget class="QWidget" name="verticalLayoutWidget_13">
-          <property name="geometry">
-           <rect>
-            <x>60</x>
-            <y>30</y>
-            <width>261</width>
-            <height>421</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_18">
-           <item>
-            <widget class="QListView" name="borrarsocio_list"/>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_14">
-          <property name="geometry">
-           <rect>
-            <x>430</x>
-            <y>190</y>
-            <width>271</width>
-            <height>85</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_20">
-           <item>
-            <widget class="QLabel" name="label_12">
-             <property name="text">
-              <string>Farmacia:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="borrarsocio_cb"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="borrarsocio_bt">
-             <property name="text">
-              <string>Eliminar Farmacia</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
