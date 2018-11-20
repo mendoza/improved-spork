@@ -26,7 +26,7 @@ class ui_registro(QtGui.QDialog):
         else:
             self.usuario["nombre"] = self.nombre_edit.text()
             self.usuario["direccion"] = self.direccion_edit.text()
-            self.usuario["identidad"] = self.id_edit.text()
+            self.usuario["identidad"] = "per_"+str(self.id_edit.text()).zfill(13)
             self.usuario["edad"] = self.edad_spinner.value()
             self.usuario["password"] = self.password_edit.text()
             if maistra == self.ContraMaistra_edit.text():

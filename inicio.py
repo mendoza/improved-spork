@@ -17,14 +17,15 @@ from main_bodega import MainWindowBodega
 
 class InicioWindow(QtGui.QDialog):
     def login(self):
-        identidad = str(self.id_edit.text()).zfill(13)
+        identidad = "per_"+str(self.id_edit.text()).zfill(13)
         print(identidad)
         password = str(self.password_edit.text())
-        if self.existencia("personas", identidad):
+        if self.existencia("personas", identidad) == True:
+            print("entre :V")
             if (
-                str(self.db.hmget("per_" + identidad, "identidad")
-                    [0]) == "per_"+identidad
-                and str(self.db.hmget("per_" + identidad, "password")[0]) == password
+                str(self.db.hmget(identidad, "identidad")
+                    [0]) ==identidad
+                and str(self.db.hmget(identidad, "password")[0]) == password
             ):
                 msg = QtGui.QMessageBox()
                 msg.setIcon(QtGui.QMessageBox.Information)

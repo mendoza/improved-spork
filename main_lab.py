@@ -11,10 +11,12 @@ class MainWindowLab(QtGui.QMainWindow):
         Iden = 0  # Lo hare incapaz de cambio
         Nombre = str(self.NombreP_edit.text())
         Fabricante = str(self.FabricanteP_cb.text())
-        CostoVP = 0  # Cambiar a spinner
-        CosteP = 0  # Cambiar a spinner
+        CostoVP = int(self.CostoVenta_sp.value())
+        CosteP = int(self.Coste_sp.value())
         UnidadP = int(self.Unidades_sp.value())
-        SeguridadP = 0
+        SeguridadP = False
+        if(bool(self.Seguridad_cb.isChecked())):
+            SeguridadP = True
         Familia = str(self.Familia_cb.text())
 
     def ListarLabs(self):

@@ -16,7 +16,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             lista.append(self.db.lindex("farmacias", i))
 
         self.farmacia["nombre"] = self.nomfarm_edit.text()
-        self.farmacia["id"] = self.db.get("contador_idfarmacia")
+        self.farmacia["id"] = "farm_"+str(self.db.get("contador_idfarmacia")).zfill(13)
         conta = int(float(self.db.get("contador_idfarmacia"))) + 1
         self.db.set("contador_idfarmacia", conta)
         self.farmacia["duenos"].append(self.ident)
@@ -24,7 +24,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.farmacia["direccion"] = self.ubifarm_edit.text()
 
         self.db.hmset(
-            "farm_" + str(self.farmacia["id"]).zfill(13), self.farmacia)
+            str(self.farmacia["id"]), self.farmacia)
         self.db.lpush("farmacias", self.farmacia["id"])
         msg = QtGui.QMessageBox()
         msg.setIcon(QtGui.QMessageBox.Information)
@@ -32,8 +32,21 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         msg.setWindowTitle("ALERT")
         msg.setStandardButtons(QtGui.QMessageBox.Ok)
         msg.exec_()
+
         return
 
+    def get_farmacias_lista(self):
+        length = self.db.llen("farmacias")
+        lista = []
+        for i in range(length):
+            index =self.db.lindex("farmacias",i)
+            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
+            duenos = duenos.replace(']','')
+            duenos = duenos.replace('\'','')
+            duenos = duenos.split(',')
+            if self.ident in duenos:
+                lista.append(index)
+        self.eliminarfarm_cb.addItems(lista)
     def __init__(self, ident):
         self.farmacia = {
             "nombre": "",
@@ -50,6 +63,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.db = redis.StrictRedis(
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
+        self.get_farmacias_lista()
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
 
 
