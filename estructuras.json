@@ -1,0 +1,23 @@
+[
+	{
+		"nombre": "farmacia",
+		"id": "",
+		"duenos": [],
+		"productos": [],
+		"direccion": "",
+		"farmaceuticos": []
+	},
+	{
+		"id": "farmacia+id+algomas",
+		"nombre": "producto de farm",
+		"familia": "",
+		"precio": "entero",
+		"unidades": ""
+	},
+	{
+		"id": "",
+		"nombre": "laboratorio :v",
+		"pedidos": [],
+		"productos": []
+	}
+]
