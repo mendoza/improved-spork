@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< Updated upstream
     <width>750</width>
     <height>527</height>
+=======
+    <width>679</width>
+    <height>544</height>
+>>>>>>> Stashed changes
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,15 +40,24 @@
         <item>
          <widget class="QToolBox" name="farmacia_toolbox">
           <property name="currentIndex">
+<<<<<<< Updated upstream
            <number>0</number>
+=======
+           <number>1</number>
+>>>>>>> Stashed changes
           </property>
           <widget class="QWidget" name="widget_2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>288</width>
+             <height>121</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -99,8 +113,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>639</width>
+             <height>382</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -121,8 +140,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>639</width>
+             <height>382</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -174,8 +198,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>639</width>
+             <height>382</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -210,8 +239,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>639</width>
+             <height>382</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -269,8 +303,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>365</height>
+=======
+             <width>639</width>
+             <height>382</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -332,8 +371,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>334</height>
+=======
+             <width>639</width>
+             <height>351</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -368,8 +412,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>334</height>
+=======
+             <width>639</width>
+             <height>351</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -403,8 +452,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>334</height>
+=======
+             <width>639</width>
+             <height>351</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <property name="accessibleName">
@@ -452,8 +506,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>334</height>
+=======
+             <width>639</width>
+             <height>351</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -506,8 +565,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>396</height>
+=======
+             <width>106</width>
+             <height>186</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
@@ -549,8 +613,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
+<<<<<<< Updated upstream
              <width>710</width>
              <height>396</height>
+=======
+             <width>639</width>
+             <height>413</height>
+>>>>>>> Stashed changes
             </rect>
            </property>
            <attribute name="label">
