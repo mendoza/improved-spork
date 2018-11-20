@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>679</width>
-    <height>412</height>
+    <width>750</width>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -35,15 +35,15 @@
         <item>
          <widget class="QToolBox" name="farmacia_toolbox">
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="widget_2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>277</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -99,8 +99,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>277</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -110,7 +110,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_23">
               <item>
-               <widget class="QTableView" name="verfarm_tb"/>
+               <widget class="QTableWidget" name="verfarm_tb"/>
               </item>
              </layout>
             </item>
@@ -121,8 +121,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>277</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -167,15 +167,15 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page_3">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>277</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -199,7 +199,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_16">
               <item>
-               <widget class="QListView" name="listapro_tb"/>
+               <widget class="QTableWidget" name="listapro_tb"/>
               </item>
              </layout>
             </item>
@@ -210,8 +210,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>630</width>
-             <height>296</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -253,7 +253,7 @@
              </layout>
             </item>
             <item>
-             <widget class="QListView" name="pedirproductos_list"/>
+             <widget class="QListWidget" name="productos_list"/>
             </item>
             <item>
              <widget class="QPushButton" name="pedir_bt">
@@ -269,8 +269,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>277</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -325,25 +325,25 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>3</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>246</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
             <string>Contratar Farmaceutico</string>
            </attribute>
-           <layout class="QFormLayout" name="formLayout_4">
+           <layout class="QFormLayout" name="formLayout_2">
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_21">
               <item>
-               <widget class="QListView" name="contrafarm_list"/>
+               <widget class="QListWidget" name="contrafarm_list"/>
               </item>
              </layout>
             </item>
@@ -368,8 +368,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>246</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -403,8 +403,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>246</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -441,7 +441,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
-               <widget class="QListView" name="farmabodega_list"/>
+               <widget class="QListWidget" name="farmabodega_list"/>
               </item>
              </layout>
             </item>
@@ -452,8 +452,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>639</width>
-             <height>219</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -499,15 +499,15 @@
         <item row="0" column="0">
          <widget class="QToolBox" name="toolBox">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="widget">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>308</height>
+             <width>710</width>
+             <height>396</height>
             </rect>
            </property>
            <attribute name="label">
@@ -538,7 +538,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_19">
               <item>
-               <widget class="QTableView" name="anadirsocio_table"/>
+               <widget class="QTableWidget" name="anadirsocio_table"/>
               </item>
              </layout>
             </item>
@@ -549,8 +549,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>643</width>
-             <height>308</height>
+             <width>710</width>
+             <height>396</height>
             </rect>
            </property>
            <attribute name="label">
@@ -581,7 +581,7 @@
             <item row="1" column="0">
              <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
-               <widget class="QListView" name="borrarsocio_list"/>
+               <widget class="QListWidget" name="borrarsocio_list"/>
               </item>
              </layout>
             </item>

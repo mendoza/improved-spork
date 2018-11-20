@@ -15,12 +15,22 @@ class MainWindowLab(QtGui.QMainWindow):
         CosteP = int(self.Coste_sp.value())
         UnidadP = int(self.Unidades_sp.value())
         SeguridadP = False
-        if(bool(self.Seguridad_cb.isChecked())):
+        if(bool(self.Seguridad_cb.isTristate())):
             SeguridadP = True
         Familia = str(self.Familia_cb.text())
 
     def ListarLabs(self):
-        pass
+        length = self.db.llen("labs")
+        lista = []
+        for i in range(length):
+            index =self.db.lindex("labs",i)
+            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
+            duenos = duenos.replace(']','')
+            duenos = duenos.replace('\'','')
+            duenos = duenos.split(',')
+            if self.ident in duenos:
+                lista.append(index)
+        self.eliminarfarm_cb.addItems(lista)
 
     def ListarProducto(self):
         pass

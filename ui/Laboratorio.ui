@@ -22,7 +22,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -181,8 +181,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>753</width>
-             <height>364</height>
+             <width>689</width>
+             <height>328</height>
             </rect>
            </property>
            <attribute name="label">
@@ -219,15 +219,15 @@
           <item>
            <widget class="QToolBox" name="toolBox_2">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_3">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>751</width>
-               <height>362</height>
+               <width>687</width>
+               <height>326</height>
               </rect>
              </property>
              <attribute name="label">
@@ -244,7 +244,7 @@
               <item>
                <layout class="QVBoxLayout" name="verticalLayout_8">
                 <item>
-                 <widget class="QListView" name="VentaP_list"/>
+                 <widget class="QListWidget" name="VentaP_list"/>
                 </item>
                </layout>
               </item>
@@ -273,7 +273,7 @@
               <item>
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
-                 <widget class="QListView" name="PedidosR_list"/>
+                 <widget class="QListWidget" name="PedidosR_list"/>
                 </item>
                </layout>
               </item>
@@ -300,7 +300,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QListView" name="listView"/>
+           <widget class="QListWidget" name="familia_list"/>
           </item>
          </layout>
         </item>

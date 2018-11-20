@@ -47,6 +47,35 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             if self.ident in duenos:
                 lista.append(index)
         self.eliminarfarm_cb.addItems(lista)
+    def get_table(self,lista):
+        if lista == "farmacias":
+            length = self.db.llen(lista)
+            print(length)
+            farmacias = []
+            for i in range(length):
+                index = self.db.lindex(lista,i)
+                duenos = self.db.hmget(index,"duenos")[0].replace('[','')
+                duenos = duenos.replace(']','')
+                duenos = duenos.replace('\'','')
+                duenos = duenos.split(',')
+                print(duenos)
+                if self.ident in duenos:
+                    farmacias.append(index)
+                self.verfarm_tb.setRowCount(len(farmacias))
+
+            for i in range(len(farmacias)):
+                farm = self.db.hgetall(farmacias[i])
+                del farm['duenos']
+                del farm['productos']
+                del farm['farmaceuticos']
+                keys = farm.keys()
+                self.verfarm_tb.setColumnCount(len(keys))
+                self.verfarm_tb.setHorizontalHeaderLabels(keys)
+                print(farm)
+                for j in range(len(keys)):
+                    self.verfarm_tb.setItem(i,j,QtGui.QTableWidgetItem(str(farm[keys[j]])))
+
+
     def __init__(self, ident):
         self.farmacia = {
             "nombre": "",
@@ -64,6 +93,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
         self.get_farmacias_lista()
+        self.get_table('farmacias')
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
 
 
