@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys
+
 reload(sys)
-sys.setdefaultencoding('utf8')
+sys.setdefaultencoding("utf8")
 import redis
 from PyQt4 import QtCore, QtGui, uic
 from functools import partial
@@ -10,17 +11,20 @@ from registro import ui_registro
 from main_farmacia import MainWindowFarmacia
 from main_lab import MainWindowLab
 from main_bodega import MainWindowBodega
-'''me gusta las piernas de papitopiernaslargas69'''
+
+"""me gusta las piernas de papitopiernaslargas69"""
 
 
 class InicioWindow(QtGui.QDialog):
     def login(self):
-        identidad = str(self.id_edit.text())
+        identidad = str(self.id_edit.text()).zfill(13)
+        print(identidad)
         password = str(self.password_edit.text())
         if self.existencia("personas", identidad):
             if (
-                str(self.db.hmget(identidad, "identidad")[0]) == identidad
-                and str(self.db.hmget(identidad, "password")[0]) == password
+                str(self.db.hmget("per_" + identidad, "identidad")
+                    [0]) == "per_"+identidad
+                and str(self.db.hmget("per_" + identidad, "password")[0]) == password
             ):
                 msg = QtGui.QMessageBox()
                 msg.setIcon(QtGui.QMessageBox.Information)
@@ -28,22 +32,22 @@ class InicioWindow(QtGui.QDialog):
                 msg.setWindowTitle("Ingreso Exiosamente")
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
-                    print(self.db.hmget(identidad,"departamento"))
-                    if self.db.hmget(identidad,"departamento")[0] == "farmacia":
+                    print(self.db.hmget(identidad, "departamento"))
+                    if self.db.hmget(identidad, "departamento")[0] == "farmacia":
                         window = QtGui.QMainWindow()
-                        ui = MainWindowFarmacia()
+                        ui = MainWindowFarmacia(identidad)
                         ui.show()
                         self.close()
                         sys.exit(ui.exec_())
-                    elif self.db.hmget(identidad,"departamento")[0] == "laboratorio":
+                    elif self.db.hmget(identidad, "departamento")[0] == "laboratorio":
                         window = QtGui.QMainWindow()
-                        ui = MainWindowLab()
+                        ui = MainWindowLab(identidad)
                         ui.show()
                         self.close()
                         sys.exit(ui.exec_())
-                    elif self.db.hmget(identidad,"departamento")[0] == "bodega":
+                    elif self.db.hmget(identidad, "departamento")[0] == "bodega":
                         window = QtGui.QMainWindow()
-                        ui = MainWindowBodega()
+                        ui = MainWindowBodega(identidad)
                         ui.show()
                         self.close()
                         sys.exit(ui.exec_())
