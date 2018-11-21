@@ -10,7 +10,6 @@ class ui_registro(QtGui.QDialog):
     def signin(self):
         maistra = self.db.get("passwordadmin")
         # if aqui para validar :v
-
         length = self.db.llen("personas")
         lista = []
 

@@ -64,6 +64,17 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                 print(farm)
                 for j in range(len(keys)):
                     self.verfarm_tb.setItem(i,j,QtGui.QTableWidgetItem(str(farm[keys[j]])))
+        elif lista == "productos":
+            farmid = self.listarprodfarm_cb.text()
+            length = self.db.llen(lista)
+            productos = []
+            exclusivos = []
+            for i in range(length):
+                productos.append(self.db.lindex(lista,i))
+            for prod in productos:
+                if farmid in prod:
+                    exclusivos.append(prod)
+            print(prod)
 
     def get_desempleados(self,lista):
         if lista== "personas":
@@ -77,6 +88,25 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                 if self.db.hmget(indice,"trabaja")[0] != "True":
                     self.contrafarm_list.addItem(personas)
                     print(self.db.hmget(personas,"nombre"))
+
+    def set_farmaceuticos(self):
+        self.contrafarm_cb.clear()
+        'agarrar las farmacias que han sido creadas por dicho dueno'
+        length = self.db.llen("farmacias")
+        lista = []
+        for i in range(length):
+            index =self.db.lindex("farmacias",i)
+            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
+            duenos = duenos.replace(']','')
+            duenos = duenos.replace('\'','')
+            duenos = duenos.split(',')
+            if self.ident in duenos:
+                lista.append(index)
+        self.contrafarm_cb.addItems(lista)
+
+    def contratar(self):
+        farmacia=str(self.contrafarm_cb.currentText())
+        
 
     def borrar_farmacias(self):
         text = str(self.eliminarfarm_cb.currentText())
@@ -120,12 +150,15 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
         self.get_farmacias_lista()
+        self.set_farmaceuticos()
         self.get_table('farmacias')
         self.get_desempleados('personas')
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
         self.crearfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
+        self.crearfarm_bt.clicked.connect(partial(self.set_farmaceuticos))
         self.borrarfarm_bt.clicked.connect(partial(self.borrar_farmacias))
         self.borrarfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
+        self.borrarfarm_bt.clicked.connect(partial(self.set_farmaceuticos))
 
 
 if __name__ == "__main__":

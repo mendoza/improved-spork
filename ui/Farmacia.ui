@@ -15,14 +15,14 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../.designer/backup/images/pill.png</normaloff>../../../../../../.designer/backup/images/pill.png</iconset>
+    <normaloff>../../../../../../../../.designer/backup/images/pill.png</normaloff>../../../../../../../../.designer/backup/images/pill.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -42,8 +42,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>288</width>
+             <height>121</height>
             </rect>
            </property>
            <attribute name="label">
@@ -99,8 +99,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>98</width>
+             <height>95</height>
             </rect>
            </property>
            <attribute name="label">
@@ -167,15 +167,15 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page_3">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>151</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -325,15 +325,15 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>179</width>
-             <height>95</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
@@ -358,6 +358,13 @@
               </item>
               <item>
                <widget class="QComboBox" name="contrafarm_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="contratarfarma_bt">
+                <property name="text">
+                 <string>Contratar</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
