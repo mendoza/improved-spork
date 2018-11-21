@@ -20,260 +20,241 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>3</number>
-      </property>
-      <widget class="QWidget" name="tab_3">
-       <attribute name="title">
-        <string>Laboratorios</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_14">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_10">
-          <item>
-           <widget class="QLabel" name="label_12">
-            <property name="text">
-             <string>Laboratorios Existentes</string>
-            </property>
-           </widget>
+     <layout class="QVBoxLayout" name="verticalLayout_11">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Laboratorios</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>Laboratorios Existentes</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="LabsE_list"/>
+            </item>
+           </layout>
           </item>
-          <item>
-           <widget class="QListWidget" name="LabsE_list"/>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>ID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Nombre:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Direccion:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Crear</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="2" rowspan="2">
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="QLineEdit" name="IDL_edit"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="NombreL_edit">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="DireccionL_edit"/>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab">
-       <property name="accessibleName">
-        <string/>
-       </property>
-       <attribute name="title">
-        <string>Productos</string>
-       </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QToolBox" name="toolBox">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="page">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>689</width>
-             <height>328</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Crear</string>
-           </attribute>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>ID:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>Nombre:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label">
-                <property name="text">
-                 <string>Fabricante:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>Costo Venta:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>Coste:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_7">
-                <property name="text">
-                 <string>Unidad:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_6">
-                <property name="text">
-                 <string>Seguridad:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>Familia:</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
-              <item>
-               <widget class="QLineEdit" name="IDP_Edit"/>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="NombreP_edit"/>
-              </item>
-              <item>
-               <widget class="QComboBox" name="Fabricante_cb"/>
-              </item>
-              <item>
-               <widget class="QDoubleSpinBox" name="CostoVenta_sb"/>
-              </item>
-              <item>
-               <widget class="QDoubleSpinBox" name="Coste_sb"/>
-              </item>
-              <item>
-               <widget class="QSpinBox" name="Unidades_sb"/>
-              </item>
-              <item>
-               <widget class="QCheckBox" name="Seguridad_cb">
-                <property name="text">
-                 <string>Verdadero</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="Familia_cb"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QPushButton" name="CrearP_bt">
-                <property name="text">
-                 <string>Crear</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="page_2">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>689</width>
-             <height>328</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Productos Disponibles</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_7">
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>Productos listos para venta:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QTableWidget" name="ProductosD_tb"/>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Farmacias</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_13">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+        </widget>
+        <widget class="QWidget" name="tab">
+         <property name="accessibleName">
+          <string/>
+         </property>
+         <attribute name="title">
+          <string>Productos</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QToolBox" name="toolBox_2">
+           <widget class="QToolBox" name="toolBox">
             <property name="currentIndex">
              <number>0</number>
             </property>
-            <widget class="QWidget" name="page_3">
+            <widget class="QWidget" name="page">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>0</y>
                <width>687</width>
-               <height>326</height>
+               <height>334</height>
               </rect>
              </property>
              <attribute name="label">
-              <string>Ventas</string>
+              <string>Crear</string>
              </attribute>
-             <layout class="QVBoxLayout" name="verticalLayout_15">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
               <item>
-               <widget class="QLabel" name="label_10">
-                <property name="text">
-                 <string>Ventas Realizadas:</string>
-                </property>
-               </widget>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>ID:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>Nombre:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Fabricante:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Costo Venta:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Coste:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>Unidad:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>Seguridad:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Familia:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
               <item>
-               <layout class="QVBoxLayout" name="verticalLayout_8">
+               <layout class="QVBoxLayout" name="verticalLayout_6">
                 <item>
-                 <widget class="QListWidget" name="VentaP_list"/>
+                 <widget class="QLineEdit" name="IDP_Edit"/>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="NombreP_edit"/>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Fabricante_cb"/>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="CostoVenta_sb"/>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="Coste_sb"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="Unidades_sb"/>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="Seguridad_cb">
+                  <property name="text">
+                   <string>Verdadero</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Familia_cb"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QPushButton" name="CrearP_bt">
+                  <property name="text">
+                   <string>Crear</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_4">
+            <widget class="QWidget" name="page_2">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>687</width>
-               <height>326</height>
+               <width>205</width>
+               <height>118</height>
               </rect>
              </property>
              <attribute name="label">
-              <string>Pedidos Recibidos</string>
+              <string>Productos Disponibles</string>
              </attribute>
-             <layout class="QVBoxLayout" name="verticalLayout_16">
+             <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>Pedidos que recibio la farmacia</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_9">
+               <layout class="QVBoxLayout" name="verticalLayout_7">
                 <item>
-                 <widget class="QListWidget" name="PedidosR_list"/>
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Productos listos para venta:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="ProductosD_tb"/>
                 </item>
                </layout>
               </item>
@@ -282,48 +263,121 @@
            </widget>
           </item>
          </layout>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Familia</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_12">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Farmacias</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
           <item>
-           <widget class="QLabel" name="label_13">
-            <property name="text">
-             <string>Lista de Familias de Productos</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QListWidget" name="familia_list"/>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QToolBox" name="toolBox_2">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page_3">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>685</width>
+                 <height>332</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>Ventas</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_15">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Ventas Realizadas:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <widget class="QListWidget" name="VentaP_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_4">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>225</width>
+                 <height>118</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>Pedidos Recibidos</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_16">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>Pedidos que recibio la farmacia</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item>
+                   <widget class="QListWidget" name="PedidosR_list"/>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>Familia</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
           <item>
-           <widget class="QLineEdit" name="Familia_edit"/>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Lista de Familias de Productos</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="familia_list"/>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Crear familia</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLineEdit" name="Familia_edit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Crear familia</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_11"/>
+        </widget>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
