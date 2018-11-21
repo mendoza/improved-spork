@@ -325,7 +325,7 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -469,6 +469,9 @@
            <layout class="QVBoxLayout" name="verticalLayout_20">
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_18">
+              <item>
+               <widget class="QComboBox" name="despedirfarma_db"/>
+              </item>
               <item>
                <widget class="QListWidget" name="despidirfarm_list"/>
               </item>
