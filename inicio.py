@@ -40,7 +40,10 @@ class InicioWindow(QtGui.QDialog):
                         ui = MainWindowFarmacia(identidad)
                         ui.show()
                         self.close()
-                        sys.exit(ui.exec_())
+                        try:
+                            sys.exit(ui.exec_())
+                        except:
+                            print("ok")
                     elif self.db.hmget(identidad, "departamento")[0] == "laboratorio":
                         window = QtGui.QMainWindow()
                         ui = MainWindowLab(identidad)

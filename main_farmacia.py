@@ -32,22 +32,9 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         msg.setWindowTitle("ALERT")
         msg.setStandardButtons(QtGui.QMessageBox.Ok)
         msg.exec_()
-
+        self.get_farmacias_lista
         return
 
-    def get_farmacias_lista(self):
-        'agarrar las farmacias que han sido creadas por dicho dueno'
-        length = self.db.llen("farmacias")
-        lista = []
-        for i in range(length):
-            index =self.db.lindex("farmacias",i)
-            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
-            duenos = duenos.replace(']','')
-            duenos = duenos.replace('\'','')
-            duenos = duenos.split(',')
-            if self.ident in duenos:
-                lista.append(index)
-        self.eliminarfarm_cb.addItems(lista)
 
     def get_table(self,lista):
         'llena tabla de farmacias'
@@ -91,8 +78,31 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                     self.contrafarm_list.addItem(personas)
                     print(self.db.hmget(personas,"nombre"))
 
+    def borrar_farmacias(self):
+        text = str(self.eliminarfarm_cb.currentText())
+        length=self.db.llen("farmacias")
+        list=[]
+        for i in range(length):
+            list.append(self.db.lindex("farmacias", i))
+        self.db.hdel(text,list)
+        self.db.delete(text)
 
 
+    def get_farmacias_lista(self):
+        self.eliminarfarm_cb.clear()
+        'agarrar las farmacias que han sido creadas por dicho dueno'
+        length = self.db.llen("farmacias")
+        lista = []
+        for i in range(length):
+            index =self.db.lindex("farmacias",i)
+            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
+            duenos = duenos.replace(']','')
+            duenos = duenos.replace('\'','')
+            duenos = duenos.split(',')
+            if self.ident in duenos:
+                lista.append(index)
+        self.eliminarfarm_cb.addItems(lista)
+        
     def __init__(self, ident):
         self.farmacia = {
             "nombre": "",
@@ -113,6 +123,9 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.get_table('farmacias')
         self.get_desempleados('personas')
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
+        self.crearfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
+        self.borrarfarm_bt.clicked.connect(partial(self.borrar_farmacias))
+        self.borrarfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
 
 
 if __name__ == "__main__":
