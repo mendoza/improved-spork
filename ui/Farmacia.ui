@@ -470,7 +470,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_18">
               <item>
-               <widget class="QComboBox" name="despedirfarma_db"/>
+               <widget class="QComboBox" name="despedirfarma_cb"/>
               </item>
               <item>
                <widget class="QListWidget" name="despidirfarm_list"/>
