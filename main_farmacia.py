@@ -81,10 +81,10 @@ class MainWindowFarmacia(QtGui.QMainWindow):
     def borrar_farmacias(self):
         text = str(self.eliminarfarm_cb.currentText())
         length=self.db.llen("farmacias")
-        list=[]
+        lista=[]
         for i in range(length):
-            list.append(self.db.lindex("farmacias", i))
-        self.db.hdel(text,list)
+            lista.append(self.db.lindex("farmacias", i))
+        self.db.hdel(text,lista)
         self.db.delete(text)
 
 

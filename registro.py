@@ -35,6 +35,9 @@ class ui_registro(QtGui.QDialog):
                 self.usuario["trabaja"] = True
             elif maistra != self.ContraMaistra_edit.text():
                 self.usuario["trabaja"] = False
+                print(maistra)
+                print("No escribio bien la compu:"),
+                print(self.ContraMaistra_edit.text())
             if self.masculino_rb.isChecked():
                 self.usuario["sexo"] = "masculino"
             elif self.femenino_rb.isChecked():
