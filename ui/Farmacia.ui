@@ -35,7 +35,7 @@
         <item>
          <widget class="QToolBox" name="farmacia_toolbox">
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="widget_2">
            <property name="geometry">
@@ -99,8 +99,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>95</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -325,7 +325,7 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>3</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -396,6 +396,13 @@
                <widget class="QComboBox" name="listafarmaceuticos_cb"/>
               </item>
               <item>
+               <widget class="QPushButton" name="obtenerempleados_bt">
+                <property name="text">
+                 <string>Obtener</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <layout class="QVBoxLayout" name="verticalLayout_8"/>
               </item>
               <item>
@@ -437,9 +444,16 @@
                <widget class="QComboBox" name="enviarfarma_cb"/>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton">
+               <widget class="QPushButton" name="enviarbod_bt">
                 <property name="text">
                  <string>Enviar a la Bodega de la Farmacia</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="obtenerenv_bt">
+                <property name="text">
+                 <string>Obtener empleados</string>
                 </property>
                </widget>
               </item>
@@ -471,6 +485,13 @@
              <layout class="QVBoxLayout" name="verticalLayout_18">
               <item>
                <widget class="QComboBox" name="despedirfarma_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="empleados_bt">
+                <property name="text">
+                 <string>Obtener empleados</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QListWidget" name="despidirfarm_list"/>

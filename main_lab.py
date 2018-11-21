@@ -9,28 +9,35 @@ from functools import partial
 
 class MainWindowLab(QtGui.QMainWindow):
     def CrearP(self):
-        self.Producto["id"] = "prod_" + \
-            str(self.db.get("contador_idproducto")).zfill(13)
+        self.Producto["id"] = "prod_" + str(self.db.get("contador_idproducto")).zfill(
+            13
+        )
         conta = int(float(self.db.get("contador_idproducto"))) + 1
         self.db.set("contador_idproducto", conta)
-        self.Producto["nombre"] = str(self.NombreP_edit.text())
-        self.Producto["fabricante"] = str(self.FabricanteP_cb.text())
-        self.Producto["costoVP"] = int(self.CostoVenta_sp.value())
-        self.Producto["costeP"] = int(self.Coste_sp.value())
-        self.Producto["unidadP"] = int(self.Unidades_sp.value())
+        self.producto["nombre"] = str(self.NombreP_edit.text())
+        self.producto["fabricante"] = str(self.FabricanteP_cb.text())
+        self.producto["costoVenta"] = int(self.CostoVenta_sp.value())
+        self.producto["coste"] = int(self.Coste_sp.value())
+        self.producto["unidad"] = int(self.Unidades_sp.value())
         SeguridadP = False
         if bool(self.Seguridad_cb.isTristate()):
             SeguridadP = True
-        self.Producto["seguridadP"] = bool(SeguridadP)
-        Familia = str(self.Familia_cb.text())
+        self.producto["seguridad"] = bool(SeguridadP)
+        self.producto["familia"] = str(self.Familia_cb.currentText())
 
     def CrearLab(self):
-        self.Laboratorio["id"] = "lab" + \
-            str(self.db.get("contador_idLab")).zfill(13)
+        self.laboratorio["id"] = "lab" + str(self.db.get("contador_idLab")).zfill(13)
         conta = int(float(self.db.get("contador_idLab"))) + 1
         self.db.set("contador_idLab", conta)
-        self.Laboratorio["nombre"] = str(self.NombreL_edit.text())
-        self.Laboratorio["direccion"] = str(self.DireccionL.text())
+        self.laboratorio["nombre"] = str(self.NombreL_edit.text())
+        self.laboratorio["direccion"] = str(self.DireccionL.text())
+        self.laboratorio["jefe"] = self.ident
+
+    def CrearFamilia(self):
+        famP = str(self.Familia.edit.text())
+        self.familia["nombre"] = str(famP)
+        self.db.lpush(familias, famP)
+        self.Familia_cb.addItem(famP)
 
     def ListarLabs(self):
         length = self.db.llen("labs")
@@ -58,7 +65,7 @@ class MainWindowLab(QtGui.QMainWindow):
         pass
 
     def __init__(self, ident):
-        self.Producto = {
+        self.producto = {
             "id": "",
             "nombre": "",
             "fabricante": "",
@@ -68,6 +75,8 @@ class MainWindowLab(QtGui.QMainWindow):
             "seguridad": "",
             "familia": "",
         }
+        self.laboratorio = {"id": "", "nombre": "", "productos": [], "jefe": ""}
+        self.familia = {"nombre": ""}
         super(MainWindowLab, self).__init__()
         QtGui.QMainWindow.__init__(self)
         uic.loadUi("./ui/Laboratorio.ui", self)

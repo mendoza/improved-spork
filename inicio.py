@@ -17,14 +17,11 @@ from main_bodega import MainWindowBodega
 
 class InicioWindow(QtGui.QDialog):
     def login(self):
-        identidad = "per_"+str(self.id_edit.text()).zfill(13)
-        print(identidad)
+        identidad = "per_" + str(self.id_edit.text()).zfill(13)
         password = str(self.password_edit.text())
         if self.existencia("personas", identidad) == True:
-            print("entre :V")
             if (
-                str(self.db.hmget(identidad, "identidad")
-                    [0]) ==identidad
+                str(self.db.hmget(identidad, "identidad")[0]) == identidad
                 and str(self.db.hmget(identidad, "password")[0]) == password
             ):
                 msg = QtGui.QMessageBox()
@@ -34,9 +31,10 @@ class InicioWindow(QtGui.QDialog):
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
                     print(self.db.hmget(identidad, "trabaja")[0])
-                    if (self.db.hmget(identidad, "departamento")[0] == "farmacia") and (self.db.hmget(identidad,"trabaja")[0] == "True"):
+                    if (self.db.hmget(identidad, "departamento")[0] == "farmacia") and (
+                        self.db.hmget(identidad, "trabaja")[0] == "True"
+                    ):
                         window = QtGui.QMainWindow()
-                        print("entro")
                         ui = MainWindowFarmacia(identidad)
                         ui.show()
                         self.close()
@@ -56,10 +54,14 @@ class InicioWindow(QtGui.QDialog):
                         ui.show()
                         self.close()
                         sys.exit(ui.exec_())
-                    elif (self.db.hmget(identidad, "departamento")[0] == "farmacia") and (self.db.hmget(identidad,"trabaja")[0] != "True"):
+                    elif (
+                        self.db.hmget(identidad, "departamento")[
+                            0] == "farmacia"
+                    ) and (self.db.hmget(identidad, "trabaja")[0] != "True"):
                         msg = QtGui.QMessageBox()
                         msg.setIcon(QtGui.QMessageBox.Information)
-                        msg.setText("Lo siento no cumple los requisitos " + identidad)
+                        msg.setText(
+                            "Lo siento no cumple los requisitos " + identidad)
                         msg.setWindowTitle("Sorry not Srry")
                         msg.setStandardButtons(QtGui.QMessageBox.Ok)
                         msg.exec_()
@@ -75,8 +77,7 @@ class InicioWindow(QtGui.QDialog):
         ui = ui_registro()
         ui.show()
         ui.exec_()
-   
-        
+
     def existencia(self, nlista, iden):
         length = self.db.llen(nlista)
         lista = []
