@@ -66,24 +66,20 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                 self.verfarm_tb.setHorizontalHeaderLabels(keys)
                 print(farm)
                 for j in range(len(keys)):
-<<<<<<< HEAD
-                    self.verfarm_tb.setItem(i,j,QtGui.QTableWidgetItem(str(farm[keys[j]])))
+                    self.verfarm_tb.setItem(
+                        i, j, QtGui.QTableWidgetItem(str(farm[keys[j]]))
+                    )
         elif lista == "productos":
-            farmid = self.listarprodfarm_cb.text()
+            farmid = self.listarprodfarm_cb.currentText()
             length = self.db.llen(lista)
             productos = []
             exclusivos = []
             for i in range(length):
-                productos.append(self.db.lindex(lista,i))
+                productos.append(self.db.lindex(lista, i))
             for prod in productos:
                 if farmid in prod:
                     exclusivos.append(prod)
             print(prod)
-=======
-                    self.verfarm_tb.setItem(
-                        i, j, QtGui.QTableWidgetItem(str(farm[keys[j]]))
-                    )
->>>>>>> master
 
     def get_desempleados(self, lista):
         if lista == "personas":
@@ -100,22 +96,48 @@ class MainWindowFarmacia(QtGui.QMainWindow):
 
     def set_farmaceuticos(self):
         self.contrafarm_cb.clear()
-        'agarrar las farmacias que han sido creadas por dicho dueno'
+        "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
         lista = []
         for i in range(length):
-            index =self.db.lindex("farmacias",i)
-            duenos = self.db.hmget(index,"duenos")[0].replace('[','')
-            duenos = duenos.replace(']','')
-            duenos = duenos.replace('\'','')
-            duenos = duenos.split(',')
+            index = self.db.lindex("farmacias", i)
+            duenos = self.db.hmget(index, "duenos")[0].replace("[", "")
+            duenos = duenos.replace("]", "")
+            duenos = duenos.replace("'", "")
+            duenos = duenos.split(",")
             if self.ident in duenos:
                 lista.append(index)
         self.contrafarm_cb.addItems(lista)
 
     def contratar(self):
-        farmacia=str(self.contrafarm_cb.currentText())
-        
+        if self.contrafarm_list.currentItem() != None:
+            persona = self.contrafarm_list.currentItem().text()
+            self.db.hset(persona, "trabaja", "True")
+            farmacia = str(self.contrafarm_cb.currentText())
+            hash_farm = self.db.hgetall(farmacia)
+            lista = hash_farm["farmaceuticos"]
+            lista = lista.replace("[", "")
+            lista = lista.replace("]", "")
+            lista = lista.replace("'", "")
+            lista = lista.replace(" ", "")
+            lista = lista.split(",")
+            lista.append(str(persona))
+            self.db.hset(farmacia, "farmaceuticos", lista)
+            msg = QtGui.QMessageBox()
+            msg.setIcon(QtGui.QMessageBox.Information)
+            msg.setText("Contratado sin error")
+            msg.setWindowTitle("ALERT")
+            msg.setStandardButtons(QtGui.QMessageBox.Ok)
+            msg.exec_()
+        else:
+            msg = QtGui.QMessageBox()
+            msg.setIcon(QtGui.QMessageBox.Information)
+            msg.setText("Error")
+            msg.setWindowTitle("ALERT")
+            msg.setStandardButtons(QtGui.QMessageBox.Ok)
+            msg.exec_()
+
+    def despedir(self):
 
     def borrar_farmacias(self):
         text = str(self.eliminarfarm_cb.currentText())
@@ -126,7 +148,6 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             lista.append(self.db.lindex("farmacias", i))
         lista.remove(text)
         self.db.delete("farmacias")
-        # hacer for para que ilia ponga su rolita >:v
         for index in lista:
             self.db.lpush("farmacias", index)
         self.db.delete(text)
@@ -135,6 +156,14 @@ class MainWindowFarmacia(QtGui.QMainWindow):
 
     def get_farmacias_lista(self):
         self.eliminarfarm_cb.clear()
+        self.listarprofarm_cb.clear()
+        self.contrafarm_cb.clear()
+        self.listafarmaceuticos_cb.clear()
+        self.enviarfarma_cb.clear()
+        self.pedirprofarm_cb.clear()
+        self.addsociofarm_cb.clear()
+        self.borrarsocio_cb.clear()
+        self.eliminarprofarm_cb.clear()
         "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
         lista = []
@@ -148,6 +177,14 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             if self.ident in duenos:
                 lista.append(index)
         self.eliminarfarm_cb.addItems(lista)
+        self.listarprofarm_cb.addItems(lista)
+        self.contrafarm_cb.addItems(lista)
+        self.listafarmaceuticos_cb.addItems(lista)
+        self.enviarfarma_cb.addItems(lista)
+        self.pedirprofarm_cb.addItems(lista)
+        self.addsociofarm_cb.addItems(lista)
+        self.borrarsocio_cb.addItems(lista)
+        self.eliminarprofarm_cb.addItems(lista)
 
     def __init__(self, ident):
         self.farmacia = {
@@ -166,22 +203,11 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
         self.get_farmacias_lista()
-<<<<<<< HEAD
-        self.set_farmaceuticos()
-        self.get_table('farmacias')
-        self.get_desempleados('personas')
-        self.crearfarm_bt.clicked.connect(partial(self.farmacias))
-        self.crearfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
-        self.crearfarm_bt.clicked.connect(partial(self.set_farmaceuticos))
-        self.borrarfarm_bt.clicked.connect(partial(self.borrar_farmacias))
-        self.borrarfarm_bt.clicked.connect(partial(self.get_farmacias_lista))
-        self.borrarfarm_bt.clicked.connect(partial(self.set_farmaceuticos))
-=======
         self.get_table("farmacias")
         self.get_desempleados("personas")
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
         self.borrarfarm_bt.clicked.connect(partial(self.borrar_farmacias))
->>>>>>> master
+        self.contratarfarma_bt.clicked.connect(partial(self.contratar))
 
 
 if __name__ == "__main__":

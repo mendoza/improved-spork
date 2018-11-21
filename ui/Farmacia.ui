@@ -269,8 +269,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>230</width>
+             <height>242</height>
             </rect>
            </property>
            <attribute name="label">
@@ -325,7 +325,7 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -393,7 +393,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox_2"/>
+               <widget class="QComboBox" name="listafarmaceuticos_cb"/>
               </item>
               <item>
                <layout class="QVBoxLayout" name="verticalLayout_8"/>
@@ -410,8 +410,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>259</width>
-             <height>186</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -434,7 +434,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox"/>
+               <widget class="QComboBox" name="enviarfarma_cb"/>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton">
@@ -459,8 +459,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>172</width>
-             <height>132</height>
+             <width>710</width>
+             <height>334</height>
             </rect>
            </property>
            <attribute name="label">
