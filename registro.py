@@ -1,19 +1,19 @@
+from functools import partial
+from PyQt4 import QtCore, QtGui, uic
+import redis
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
-import redis
-from PyQt4 import QtCore, QtGui, uic
-from functools import partial
 
-    
+
 class ui_registro(QtGui.QDialog):
     def signin(self):
         maistra = self.db.get("passwordadmin")
         # if aqui para validar :v
-        
+
         length = self.db.llen("personas")
         lista = []
-          
+
         for i in range(length):
             lista.append(self.db.lindex("personas", i))
         if self.id_edit.text() in lista:
@@ -26,11 +26,15 @@ class ui_registro(QtGui.QDialog):
         else:
             self.usuario["nombre"] = self.nombre_edit.text()
             self.usuario["direccion"] = self.direccion_edit.text()
-            self.usuario["identidad"] = "per_"+str(self.id_edit.text()).zfill(13)
+            self.usuario["identidad"] = "per_" + \
+                str(self.id_edit.text()).zfill(13)
             self.usuario["edad"] = self.edad_spinner.value()
             self.usuario["password"] = self.password_edit.text()
             if maistra == self.ContraMaistra_edit.text():
-                self.usuario["es_jefe"] = True  
+                self.usuario["es_jefe"] = True
+                self.usuario["trabaja"] = True
+            elif maistra != self.ContraMaistra_edit.text():
+                self.usuario["trabaja"] = False
             if self.masculino_rb.isChecked():
                 self.usuario["sexo"] = "masculino"
             elif self.femenino_rb.isChecked():
@@ -41,10 +45,8 @@ class ui_registro(QtGui.QDialog):
                 self.usuario["sexo"] = "N/A"
             if self.farmacia_rb.isChecked():
                 self.usuario["departamento"] = "farmacia"
-            elif self.laboratorio_rb.isChecked():
+            elif self.laboratorio_rb.isChecked() and maistra == self.ContraMaistra_edit.text():
                 self.usuario["departamento"] = "laboratorio"
-            elif self.admin_rb.isChecked():
-                self.usuario["departamento"] = "administracion"
             else:
                 msg = QtGui.QMessageBox()
                 msg.setIcon(QtGui.QMessageBox.Information)
@@ -52,7 +54,7 @@ class ui_registro(QtGui.QDialog):
                 msg.setWindowTitle("ALERT")
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
-                    return 
+                    return
 
             self.db.hmset(self.usuario["identidad"], self.usuario)
             self.db.lpush("personas", self.usuario["identidad"])
@@ -63,7 +65,6 @@ class ui_registro(QtGui.QDialog):
             msg.setStandardButtons(QtGui.QMessageBox.Ok)
             msg.exec_()
 
-
     def __init__(self):
         self.usuario = {
             "nombre": "",
@@ -72,8 +73,9 @@ class ui_registro(QtGui.QDialog):
             "identidad": "",
             "sexo": "",
             "password": "",
-            "es_jefe":False,
-            "departamento":""
+            "es_jefe": False,
+            "departamento": "",
+            "trabaja":""
         }
         super(ui_registro, self).__init__()
         QtGui.QMainWindow.__init__(self)

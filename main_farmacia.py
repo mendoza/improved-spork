@@ -14,7 +14,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = []
         for i in range(length):
             lista.append(self.db.lindex("farmacias", i))
-
+        'Guardar farmacias en DB'
         self.farmacia["nombre"] = self.nomfarm_edit.text()
         self.farmacia["id"] = "farm_"+str(self.db.get("contador_idfarmacia")).zfill(13)
         conta = int(float(self.db.get("contador_idfarmacia"))) + 1
@@ -36,6 +36,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         return
 
     def get_farmacias_lista(self):
+        'agarrar las farmacias que han sido creadas por dicho dueno'
         length = self.db.llen("farmacias")
         lista = []
         for i in range(length):
@@ -47,7 +48,9 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             if self.ident in duenos:
                 lista.append(index)
         self.eliminarfarm_cb.addItems(lista)
+
     def get_table(self,lista):
+        'llena tabla de farmacias'
         if lista == "farmacias":
             length = self.db.llen(lista)
             print(length)
@@ -75,6 +78,20 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                 for j in range(len(keys)):
                     self.verfarm_tb.setItem(i,j,QtGui.QTableWidgetItem(str(farm[keys[j]])))
 
+    def get_desempleados(self,lista):
+        if lista== "personas":
+            length=self.db.llen(lista)
+            print("personas: "),
+            print(length)
+            desempleados=[]
+            for i in range (length):
+                indice=self.db.lindex(lista,i)
+                personas=self.db.hmget(indice,"identidad")[0]
+                if self.db.hmget(indice,"trabaja")[0] != "True":
+                    self.contrafarm_list.addItem(personas)
+                    print(self.db.hmget(personas,"nombre"))
+
+
 
     def __init__(self, ident):
         self.farmacia = {
@@ -94,6 +111,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         )
         self.get_farmacias_lista()
         self.get_table('farmacias')
+        self.get_desempleados('personas')
         self.crearfarm_bt.clicked.connect(partial(self.farmacias))
 
 

@@ -33,9 +33,10 @@ class InicioWindow(QtGui.QDialog):
                 msg.setWindowTitle("Ingreso Exiosamente")
                 msg.setStandardButtons(QtGui.QMessageBox.Ok)
                 if msg.exec_():
-                    print(self.db.hmget(identidad, "departamento"))
-                    if self.db.hmget(identidad, "departamento")[0] == "farmacia":
+                    print(self.db.hmget(identidad, "trabaja")[0])
+                    if (self.db.hmget(identidad, "departamento")[0] == "farmacia") and (self.db.hmget(identidad,"trabaja")[0] == "True"):
                         window = QtGui.QMainWindow()
+                        print("entro")
                         ui = MainWindowFarmacia(identidad)
                         ui.show()
                         self.close()
@@ -52,6 +53,13 @@ class InicioWindow(QtGui.QDialog):
                         ui.show()
                         self.close()
                         sys.exit(ui.exec_())
+                    elif (self.db.hmget(identidad, "departamento")[0] == "farmacia") and (self.db.hmget(identidad,"trabaja")[0] != "True"):
+                        msg = QtGui.QMessageBox()
+                        msg.setIcon(QtGui.QMessageBox.Information)
+                        msg.setText("Lo siento no cumple los requisitos " + identidad)
+                        msg.setWindowTitle("Sorry not Srry")
+                        msg.setStandardButtons(QtGui.QMessageBox.Ok)
+                        msg.exec_()
                     else:
                         return
             else:
@@ -64,7 +72,8 @@ class InicioWindow(QtGui.QDialog):
         ui = ui_registro()
         ui.show()
         ui.exec_()
-
+   
+        
     def existencia(self, nlista, iden):
         length = self.db.llen(nlista)
         lista = []
