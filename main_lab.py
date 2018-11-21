@@ -8,15 +8,18 @@ from PyQt4 import QtCore, QtGui, uic
 
 class MainWindowLab(QtGui.QMainWindow):
     def CrearP(self):
-        Iden = 0  # Lo hare incapaz de cambio
-        Nombre = str(self.NombreP_edit.text())
-        Fabricante = str(self.FabricanteP_cb.text())
-        CostoVP = int(self.CostoVenta_sp.value())
-        CosteP = int(self.Coste_sp.value())
-        UnidadP = int(self.Unidades_sp.value())
+        self.Producto["ID"]="Lab_"+str(self.db.get("contador_idproducto")).zfill(13)
+        conta = int(0)
+        self.db.set(self,"contador_idproducto", conta)
+        self.Producto["Nombre"] = str(self.NombreP_edit.text())
+        self.Producto["Fabricante"] = str(self.FabricanteP_cb.text())
+        self.Producto["CostoVP"] = int(self.CostoVenta_sp.value())
+        self.Producto["CosteP"] = int(self.Coste_sp.value())
+        self.Producto["UnidadP"] = int(self.Unidades_sp.value())
         SeguridadP = False
         if(bool(self.Seguridad_cb.isTristate())):
             SeguridadP = True
+        self.Producto["SeguridadP"] = bool(SeguridadP)
         Familia = str(self.Familia_cb.text())
 
     def ListarLabs(self):
@@ -30,7 +33,7 @@ class MainWindowLab(QtGui.QMainWindow):
             duenos = duenos.split(',')
             if self.ident in duenos:
                 lista.append(index)
-        self.eliminarfarm_cb.addItems(lista)
+        self.Fabricante_cb.addItems(lista)
 
     def ListarProducto(self):
         pass

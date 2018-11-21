@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -99,8 +99,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>98</width>
+             <height>95</height>
             </rect>
            </property>
            <attribute name="label">
@@ -121,8 +121,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>229</width>
+             <height>47</height>
             </rect>
            </property>
            <attribute name="label">
@@ -167,7 +167,7 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page_3">
            <property name="geometry">
@@ -325,7 +325,7 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
@@ -392,7 +392,7 @@
                <layout class="QVBoxLayout" name="verticalLayout_8"/>
               </item>
               <item>
-               <widget class="QTableWidget" name="listafarma_tb"/>
+               <widget class="QListWidget" name="listafarma_list"/>
               </item>
              </layout>
             </item>
@@ -463,14 +463,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_18">
               <item>
-               <widget class="QTableWidget" name="despidirfarm_tb">
-                <property name="minimumSize">
-                 <size>
-                  <width>582</width>
-                  <height>0</height>
-                 </size>
-                </property>
-               </widget>
+               <widget class="QListWidget" name="despidirfarm_list"/>
               </item>
              </layout>
             </item>
@@ -549,8 +542,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>396</height>
+             <width>155</width>
+             <height>186</height>
             </rect>
            </property>
            <attribute name="label">
