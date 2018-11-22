@@ -179,8 +179,38 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             msg.setStandardButtons(QtGui.QMessageBox.Ok)
             msg.exec_()
 
-
+    def get_sociosBorrar(self):
+        self.borrarsocio_list.clear()
+        farmacia = self.borrarsocio_cb.currentText()
+        lista = self.db.hget(farmacia, "duenos")
+        lista = lista.replace("[", "")
+        lista = lista.replace("]", "")
+        lista = lista.replace("'", "")
+        lista = lista.replace(" ", "")
+        lista = lista.split(",")
+        for i in range(len(lista)):
+            print(lista[i]),
+            if  lista[i] == self.ident :
+                print("es el mero")
+            else:
+                self.borrarsocio_list.addItem(lista[i])
         
+        
+    def borrar_socios(self):
+        farmacia = self.borrarsocio_cb.currentText()
+        persona=self.borrarsocio_list.currentItem().text()
+        lista = self.db.hget(farmacia, "duenos")
+        lista = lista.replace("[", "")
+        lista = lista.replace("]", "")
+        lista = lista.replace("'", "")
+        lista = lista.replace(" ", "")
+        lista = lista.split(",")
+        for i in range(len(lista)):
+            if persona == lista[i]:
+                self.db.hset(persona, "departamento", "farmacia")
+                del lista[i]
+        self.db.hset(farmacia, "duenos", lista)
+
     def get_socios(self):
         self.listarsocio_list.clear()
         farmacia = self.listarsociofarm_cb.currentText()
@@ -190,6 +220,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = lista.replace("'", "")
         lista = lista.replace(" ", "")
         lista = lista.split(",")
+        
         self.listarsocio_list.addItems(lista)
                     
     def despedir(self):
@@ -265,6 +296,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.eliminarprofarm_cb.clear()
         self.despedirfarma_cb.clear()
         self.listarsociofarm_cb.clear()
+        
         "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
         lista = []
@@ -323,15 +355,23 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.contratarfarma_bt.clicked.connect(
             partial(self.get_desempleados, "personas")
         )
+
         self.empleados_bt.clicked.connect(partial(self.despedir_get))
         self.borrarfarma_bt.clicked.connect(partial(self.despedir))
         self.obtenerempleados_bt.clicked.connect(
             partial(self.despedir_get_list))
+
         self.enviarbod_bt.clicked.connect(partial(self.enviarbod))
         self.obtenerenv_bt.clicked.connect(partial(self.get_empleados))
+
         self.cargarsocio_bt.clicked.connect(partial(self.get_sociosfarma))
         self.cargarlistsocio_bt.clicked.connect(partial(self.get_socios))
         self.addsocio_bt.clicked.connect(partial(self.add_socios))
+        self.addsocio_bt.clicked.connect(partial(self.get_sociosfarma))
+        
+        self.listaborrar_bt.clicked.connect(partial(self.get_sociosBorrar))
+        self.borrarsocio_bt.clicked.connect(partial(self.borrar_socios))
+        self.borrarsocio_bt.clicked.connect(partial(self.get_sociosBorrar))
 
 
 if __name__ == "__main__":

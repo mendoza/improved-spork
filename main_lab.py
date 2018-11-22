@@ -26,6 +26,7 @@ class MainWindowLab(QtGui.QMainWindow):
         self.producto["familia"] = str(self.Familia_cb.currentText())
         self.db.lpush("productos",self.producto["id"])
         self.db.hmset(self.producto["id"],self.producto)
+        self.getProducto("producto")
         
     def CrearLab(self):
         self.laboratorio["id"] = "lab_" + str(self.db.get("contador_idLab")).zfill(13)
@@ -36,6 +37,9 @@ class MainWindowLab(QtGui.QMainWindow):
         self.laboratorio["jefe"] = self.ident
         self.db.lpush("laboratorios",self.laboratorio["id"])
         self.db.hmset(self.laboratorio["id"],self.laboratorio)
+        self.getFaricante()
+        self.ListarLabs()
+            
     def CrearFamilia(self):
         famP = str(self.Familia.edit.text())
         self.db.lpush("familias",famP)
@@ -75,8 +79,8 @@ class MainWindowLab(QtGui.QMainWindow):
     def getProducto(self,lista):
         self.ProductosD_tb.clear()
         if lista == "producto":
-            self.verfarm_tb.setRowCount(0)
-            self.verfarm_tb.setColumnCount(0)
+            self.ProductosD_tb.setRowCount(0)
+            self.ProductosD_tb.setColumnCount(0)
             length = self.db.llen(lista)
             print(length)
             productosL = []
@@ -85,7 +89,19 @@ class MainWindowLab(QtGui.QMainWindow):
                 produc = self.db.hmget(index, "productos")[0].replace("[", "")
                 produc = produc.replace("]", "")
                 produc = produc.replace("'", "")
-                produc = duenos.split(",")                        
+                produc = produc.split(",")
+                if self.db.hget(self.db.hget(index,"fabricante"),"jefe")==self.ident:
+                    productosL.append(index)
+                    self.ProductosD_tb.setRowCount(len(productosL))
+            for i in range(len(productosL)):
+                farm = self.db.hgetall(productosL[i])
+                keys = farm.keys()
+                self.ProductosD_tb.setColumnCount(len(keys))
+                self.ProductosD_tb.setHorizontalHeaderLabels(keys)
+                for j in range(len(keys)):
+                    self.ProductosD_tb.setItem(
+                        i, j, QtGui.QTableWidgetItem(str(farm[keys[j]]))
+                    )
 
     def VentasR(self):
         pass
@@ -116,9 +132,13 @@ class MainWindowLab(QtGui.QMainWindow):
         self.db = redis.StrictRedis(
             host="159.89.34.186", password="papitopiernaslargas69", db=0, port="6379"
         )
-
+        self.getFaricante()
+        self.ListarLabs()
+        self.getProducto("producto")
+        self.getListFamilias()
         self.CrearP_bt.clicked.connect(partial(self.CrearP))
-
+        self.pushBotton_2.clicked.connect(partial(self.CrearLab))
+        self.pushBotton.clicked.connect(partial(self.CrearFamilia))
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
