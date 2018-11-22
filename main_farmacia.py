@@ -9,6 +9,7 @@ sys.setdefaultencoding("utf8")
 
 # como le metemos la cantidad de productos  en la lista de produtos de la farmacia? tabla :v
 
+
 class MainWindowFarmacia(QtGui.QMainWindow):
     def farmacias(self):
         length = self.db.llen("farmacias")
@@ -71,10 +72,10 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                     )
         elif lista == "productos":
             farmid = self.listarprodfarm_cb.currentText()
-            farm_hash = self.db.hget(farmid,"productos")[0]
-            farm_hash = farm_hash.replace("[","")
-            farm_hash = farm_hash.replace("]","")
-            farm_hash = farm_hash.replace("\'","")
+            farm_hash = self.db.hget(farmid, "productos")[0]
+            farm_hash = farm_hash.replace("[", "")
+            farm_hash = farm_hash.replace("]", "")
+            farm_hash = farm_hash.replace("\'", "")
             farm_hash = farm_hash.split(',')
             length = self.db.llen(lista)
             productos = []
@@ -163,15 +164,14 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = lista.split(",")
         print(len(lista))
         for i in range(len(lista)):
-            if (self.db.hmget(lista[i],"departamento")[0] == "Socio" or lista[i] == " "):
+            if (self.db.hmget(lista[i], "departamento")[0] == "Socio" or lista[i] == " "):
                 print("ya")
             else:
                 self.anadirsocio_list.addItem(lista[i])
-        
 
     def add_socios(self):
         if self.anadirsocio_list.currentItem() != None:
-            persona=self.anadirsocio_list.currentItem().text()
+            persona = self.anadirsocio_list.currentItem().text()
             self.db.hset(persona, "departamento", "Socio")
             farmacia = str(self.addsociofarm_cb.currentText())
             hash_farm = self.db.hgetall(farmacia)
@@ -182,7 +182,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             lista = lista.replace(" ", "")
             lista = lista.split(",")
             lista.append(str(persona))
-            self.db.hset(farmacia,"duenos",lista)
+            self.db.hset(farmacia, "duenos", lista)
 
             print("se ha guardado socio")
             msg = QtGui.QMessageBox()
@@ -203,15 +203,14 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = lista.split(",")
         for i in range(len(lista)):
             print(lista[i]),
-            if  lista[i] == self.ident :
+            if lista[i] == self.ident:
                 print("es el mero")
             else:
                 self.borrarsocio_list.addItem(lista[i])
-        
-        
+
     def borrar_socios(self):
         farmacia = self.borrarsocio_cb.currentText()
-        persona=self.borrarsocio_list.currentItem().text()
+        persona = self.borrarsocio_list.currentItem().text()
         lista = self.db.hget(farmacia, "duenos")
         lista = lista.replace("[", "")
         lista = lista.replace("]", "")
@@ -233,9 +232,9 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = lista.replace("'", "")
         lista = lista.replace(" ", "")
         lista = lista.split(",")
-        
+
         self.listarsocio_list.addItems(lista)
-                    
+
     def despedir(self):
         elegido = self.despidirfarm_list.currentItem().text()
         farmacia = self.despedirfarma_cb.currentText()
@@ -310,7 +309,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.despedirfarma_cb.clear()
         self.listarsociofarm_cb.clear()
         self.pedirprofarm_cb.clear()
-        
+
         "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
         lista = []
@@ -346,37 +345,50 @@ class MainWindowFarmacia(QtGui.QMainWindow):
 
     def pedirProducto(self):
         pedido = {
-            "id":"",
+            "id": "",
             "farmacia": "",
             "laboratorio": "",
             "cantidad": 0,
         }
-        self.pedido["id"] = "Pedi_" + str(self.db.get("contador_idPed")).zfill(13)
-        conta = int(float(self.db.get("contador_idPed"))) + 1
-        self.db.set("contador_idPed", conta)
-        self.pedido["farmacia"] = (self.pedirprofarm_cb.currentText())
-        self.pedido["labo"] = (self.laboratoriopro_cb.currentText())
-        self.pedido["cantidad"] = (self.cantidadpro_spin.value())
+        pedido["id"] = "Pedi_" + \
+            str(self.db.get("contador_idpedidos")).zfill(13)
+        conta = int(float(self.db.get("contador_idpedidos"))) + 1
+        self.db.set("contador_idpedidos", conta)
+        pedido["farmacia"] = str(self.pedirprofarm_cb.currentText())
+        pedido["laboratorio"] = str(self.laboratoriopro_cb.currentText())
+        pedido["cantidad"] = str(self.cantidadpro_spin.value())
+        pedido["producto"] = str(self.productos_list.currentItem().text())
+        farma = self.db.hget(pedido['farmacia'], "productos")
+        farma = farma.replace("[", "")
+        farma = farma.replace("]", "")
+        farma = farma.replace("\'", "")
+        farma = farma.split(',')
+        farma.append(pedido["producto"])
+        self.db.hset(pedido["farmacia"], "productos", farma)
+        self.db.hmset(pedido["id"], pedido)
+        self.db.lpush("pedidos", pedido["id"])
 
-    def llenarLista(self,lista):
+    def llenarLista(self, lista):
         self.productos_list.clear()
         if lista == "productos":
             length = self.db.llen(lista)
             productosP = []
             for i in range(length):
-                index = self.db.lindex(lista,i)
-                if self.db.hget(index,"fabricante") == self.laboratoriopro_cb.currentText():
+                index = self.db.lindex(lista, i)
+                if self.db.hget(index, "fabricante") == self.laboratoriopro_cb.currentText():
                     productosP.append(index)
             self.productos_list.addItems(productosP)
-            #prolista_bt
+            # prolista_bt
+
     def llenarlabcb(self):
         self.laboratoriopro_cb.clear()
         length = self.db.llen("laboratorios")
         productosP = []
         for i in range(length):
-            index = self.db.lindex("laboratorios",i)
+            index = self.db.lindex("laboratorios", i)
             productosP.append(index)
         self.laboratoriopro_cb.addItems(productosP)
+
     def __init__(self, ident):
         self.farmacia = {
             "nombre": "",
@@ -408,7 +420,8 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.borrarfarma_bt.clicked.connect(partial(self.despedir))
         self.obtenerempleados_bt.clicked.connect(
             partial(self.despedir_get_list))
-        self.prolista_bt.clicked.connect(partial(self.llenarLista))
+        self.prolista_bt.clicked.connect(
+            partial(self.llenarLista, "productos"))
         self.enviarbod_bt.clicked.connect(partial(self.enviarbod))
         self.obtenerenv_bt.clicked.connect(partial(self.get_empleados))
         self.pedir_bt.clicked.connect(partial(self.pedirProducto))
@@ -416,12 +429,10 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.cargarlistsocio_bt.clicked.connect(partial(self.get_socios))
         self.addsocio_bt.clicked.connect(partial(self.add_socios))
         self.addsocio_bt.clicked.connect(partial(self.get_sociosfarma))
-        
+
         self.listaborrar_bt.clicked.connect(partial(self.get_sociosBorrar))
         self.borrarsocio_bt.clicked.connect(partial(self.borrar_socios))
         self.borrarsocio_bt.clicked.connect(partial(self.get_sociosBorrar))
-
-        
 
 
 if __name__ == "__main__":
