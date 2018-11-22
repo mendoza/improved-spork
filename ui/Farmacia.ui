@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -167,7 +167,7 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page_3">
            <property name="geometry">
@@ -199,7 +199,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_16">
               <item>
-               <widget class="QTableWidget" name="listapro_tb"/>
+               <widget class="QTableView" name="listaprofarm_tb"/>
               </item>
              </layout>
             </item>
@@ -210,8 +210,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>103</width>
-             <height>296</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -250,6 +250,13 @@
               <item>
                <widget class="QSpinBox" name="cantidadpro_spin"/>
               </item>
+              <item>
+               <widget class="QPushButton" name="prolista_bt">
+                <property name="text">
+                 <string>Actualiza Lista</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
             <item>
@@ -269,8 +276,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>230</width>
-             <height>242</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">

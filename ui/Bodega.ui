@@ -34,109 +34,13 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="page_3">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>760</width>
-             <height>438</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Ordenar</string>
-           </attribute>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <item>
-                 <widget class="QLabel" name="label_3">
-                  <property name="text">
-                   <string>Cantidad a ordenar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QSpinBox" name="cant_spinner"/>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout">
-                <item>
-                 <widget class="QLabel" name="label">
-                  <property name="text">
-                   <string>Laboratorio</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="laboratorio_cb"/>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <widget class="QLabel" name="label_2">
-                  <property name="text">
-                   <string>Producto a ordenar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="producto_cb"/>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
-              <property name="spacing">
-               <number>6</number>
-              </property>
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_5">
-                <item>
-                 <widget class="QTableWidget" name="carrito_tb"/>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="agregar_bt">
-                  <property name="text">
-                   <string>Agregar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="eliminar_bt">
-                  <property name="text">
-                   <string>Eliminar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="ordenar_bt">
-                  <property name="text">
-                   <string>Ordenar</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
           <widget class="QWidget" name="page_4">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
              <width>760</width>
-             <height>438</height>
+             <height>469</height>
             </rect>
            </property>
            <attribute name="label">
@@ -151,7 +55,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QTableWidget" name="tableWidget"/>
+             <widget class="QTableWidget" name="probodega_tb"/>
             </item>
            </layout>
           </widget>
@@ -161,7 +65,7 @@
              <x>0</x>
              <y>0</y>
              <width>760</width>
-             <height>438</height>
+             <height>469</height>
             </rect>
            </property>
            <attribute name="label">

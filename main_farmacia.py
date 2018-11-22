@@ -7,6 +7,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf8")
 
+# como le metemos la cantidad de productos  en la lista de produtos de la farmacia? tabla :v
 
 class MainWindowFarmacia(QtGui.QMainWindow):
     def farmacias(self):
@@ -70,16 +71,28 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                     )
         elif lista == "productos":
             farmid = self.listarprodfarm_cb.currentText()
+            farm_hash = self.db.hget(farmid,"productos")[0]
+            farm_hash = farm_hash.replace("[","")
+            farm_hash = farm_hash.replace("]","")
+            farm_hash = farm_hash.replace("\'","")
+            farm_hash = farm_hash.split(',')
             length = self.db.llen(lista)
             productos = []
             exclusivos = []
             for i in range(length):
-                productos.append(self.db.lindex(lista, i))
-            for prod in productos:
-                if farmid in prod:
-                    exclusivos.append(prod)
-            #terminar despues de sanchez :v
-            print(prod)
+                index = self.db.lindex(lista, i)
+                if index in farm_hash:
+                    productos.append(index)
+            self.listaprofarm_tb.setRowCount(len(productos))
+            for i in range(len(productos)):
+                farm = self.db.hgetall(productos[i])
+                keys = farm.keys()
+                self.listaprofarm_tb.setColumnCount(len(keys))
+                self.listaprofarm_tb.setHorizontalHeaderLabels(keys)
+                print(farm)
+                for j in range(len(keys)):
+                    self.listaprofarm_tb.setItem(
+                        i, j, QtGui.QTableWidgetItem(str(farm[keys[j]])))
 
     def get_desempleados(self, lista):
         self.contrafarm_list.clear()
@@ -296,6 +309,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.eliminarprofarm_cb.clear()
         self.despedirfarma_cb.clear()
         self.listarsociofarm_cb.clear()
+        self.pedirprofarm_cb.clear()
         
         "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
@@ -330,6 +344,39 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         lista = lista.split(",")
         self.farmabodega_list.addItems(lista)
 
+    def pedirProducto(self):
+        pedido = {
+            "id":"",
+            "farmacia": "",
+            "laboratorio": "",
+            "cantidad": 0,
+        }
+        self.pedido["id"] = "Pedi_" + str(self.db.get("contador_idPed")).zfill(13)
+        conta = int(float(self.db.get("contador_idPed"))) + 1
+        self.db.set("contador_idPed", conta)
+        self.pedido["farmacia"] = (self.pedirprofarm_cb.currentText())
+        self.pedido["labo"] = (self.laboratoriopro_cb.currentText())
+        self.pedido["cantidad"] = (self.cantidadpro_spin.value())
+
+    def llenarLista(self,lista):
+        self.productos_list.clear()
+        if lista == "productos":
+            length = self.db.llen(lista)
+            productosP = []
+            for i in range(length):
+                index = self.db.lindex(lista,i)
+                if self.db.hget(index,"fabricante") == self.laboratoriopro_cb.currentText():
+                    productosP.append(index)
+            self.productos_list.addItems(productosP)
+            #prolista_bt
+    def llenarlabcb(self):
+        self.laboratoriopro_cb.clear()
+        length = self.db.llen("laboratorios")
+        productosP = []
+        for i in range(length):
+            index = self.db.lindex("laboratorios",i)
+            productosP.append(index)
+        self.laboratoriopro_cb.addItems(productosP)
     def __init__(self, ident):
         self.farmacia = {
             "nombre": "",
@@ -355,15 +402,16 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.contratarfarma_bt.clicked.connect(
             partial(self.get_desempleados, "personas")
         )
-
+        self.llenarlabcb()
+        self.llenarLista("productos")
         self.empleados_bt.clicked.connect(partial(self.despedir_get))
         self.borrarfarma_bt.clicked.connect(partial(self.despedir))
         self.obtenerempleados_bt.clicked.connect(
             partial(self.despedir_get_list))
-
+        self.prolista_bt.clicked.connect(partial(self.llenarLista))
         self.enviarbod_bt.clicked.connect(partial(self.enviarbod))
         self.obtenerenv_bt.clicked.connect(partial(self.get_empleados))
-
+        self.pedir_bt.clicked.connect(partial(self.pedirProducto))
         self.cargarsocio_bt.clicked.connect(partial(self.get_sociosfarma))
         self.cargarlistsocio_bt.clicked.connect(partial(self.get_socios))
         self.addsocio_bt.clicked.connect(partial(self.add_socios))
@@ -372,6 +420,8 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.listaborrar_bt.clicked.connect(partial(self.get_sociosBorrar))
         self.borrarsocio_bt.clicked.connect(partial(self.borrar_socios))
         self.borrarsocio_bt.clicked.connect(partial(self.get_sociosBorrar))
+
+        
 
 
 if __name__ == "__main__":
