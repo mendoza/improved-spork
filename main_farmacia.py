@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
+from functools import partial
+from PyQt4 import QtCore, QtGui, uic
+import redis
 import sys
 
 reload(sys)
 sys.setdefaultencoding("utf8")
-import redis
-from PyQt4 import QtCore, QtGui, uic
-from functools import partial
 
 
 class MainWindowFarmacia(QtGui.QMainWindow):
@@ -51,7 +51,6 @@ class MainWindowFarmacia(QtGui.QMainWindow):
                 duenos = duenos.replace("]", "")
                 duenos = duenos.replace("'", "")
                 duenos = duenos.split(",")
-                print(duenos)
                 if self.ident in duenos:
                     farmacias.append(index)
                 self.verfarm_tb.setRowCount(len(farmacias))
@@ -79,14 +78,15 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             for prod in productos:
                 if farmid in prod:
                     exclusivos.append(prod)
+            #terminar despues de sanchez :v
             print(prod)
 
     def get_desempleados(self, lista):
         self.contrafarm_list.clear()
         if lista == "personas":
             length = self.db.llen(lista)
-            print("personas: "),
-            print(length)
+            '''print("personas: "),
+            print(length)'''
             desempleados = []
             for i in range(length):
                 indice = self.db.lindex(lista, i)
@@ -131,24 +131,6 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             msg.setWindowTitle("ALERT")
             msg.setStandardButtons(QtGui.QMessageBox.Ok)
             msg.exec_()
-            persona = self.contrafarm_list.currentItem().text()
-            self.db.hset(persona, "trabaja", "True")
-            farmacia = str(self.contrafarm_cb.currentText())
-            hash_farm = self.db.hgetall(farmacia)
-            lista = hash_farm["farmaceuticos"]
-            lista = lista.replace("[", "")
-            lista = lista.replace("]", "")
-            lista = lista.replace("'", "")
-            lista = lista.replace(" ", "")
-            lista = lista.split(",")
-            lista.append(str(persona))
-            self.db.hset(farmacia, "farmaceuticos", lista)
-            msg = QtGui.QMessageBox()
-            msg.setIcon(QtGui.QMessageBox.Information)
-            msg.setText("Contratado sin error")
-            msg.setWindowTitle("ALERT")
-            msg.setStandardButtons(QtGui.QMessageBox.Ok)
-            msg.exec_()
         else:
             msg = QtGui.QMessageBox()
             msg.setIcon(QtGui.QMessageBox.Information)
@@ -157,9 +139,59 @@ class MainWindowFarmacia(QtGui.QMainWindow):
             msg.setStandardButtons(QtGui.QMessageBox.Ok)
             msg.exec_()
 
-    def agregarsocio(self):
+    def get_sociosfarma(self):
+        self.anadirsocio_list.clear()
         farmacia = self.addsociofarm_cb.currentText()
+        lista = self.db.hget(farmacia, "farmaceuticos")
+        lista = lista.replace("[", "")
+        lista = lista.replace("]", "")
+        lista = lista.replace("'", "")
+        lista = lista.replace(" ", "")
+        lista = lista.split(",")
+        print(len(lista))
+        for i in range(len(lista)):
+            if (self.db.hmget(lista[i],"departamento")[0] == "Socio" or lista[i] == " "):
+                print("ya")
+            else:
+                self.anadirsocio_list.addItem(lista[i])
+        
 
+    def add_socios(self):
+        if self.anadirsocio_list.currentItem() != None:
+            persona=self.anadirsocio_list.currentItem().text()
+            self.db.hset(persona, "departamento", "Socio")
+            farmacia = str(self.addsociofarm_cb.currentText())
+            hash_farm = self.db.hgetall(farmacia)
+            lista = hash_farm["duenos"]
+            lista = lista.replace("[", "")
+            lista = lista.replace("]", "")
+            lista = lista.replace("'", "")
+            lista = lista.replace(" ", "")
+            lista = lista.split(",")
+            lista.append(str(persona))
+            self.db.hset(farmacia,"duenos",lista)
+
+            print("se ha guardado socio")
+            msg = QtGui.QMessageBox()
+            msg.setIcon(QtGui.QMessageBox.Information)
+            msg.setText("Nuevo Socio")
+            msg.setWindowTitle("ALERT")
+            msg.setStandardButtons(QtGui.QMessageBox.Ok)
+            msg.exec_()
+
+
+        
+    def get_socios(self):
+        self.listarsocio_list.clear()
+        farmacia = self.listarsociofarm_cb.currentText()
+        lista = self.db.hget(farmacia, "duenos")
+        lista = lista.replace("[", "")
+        lista = lista.replace("]", "")
+        lista = lista.replace("'", "")
+        lista = lista.replace(" ", "")
+        lista = lista.split(",")
+        self.listarsocio_list.addItems(lista)
+                    
     def despedir(self):
         elegido = self.despidirfarm_list.currentItem().text()
         farmacia = self.despedirfarma_cb.currentText()
@@ -214,8 +246,12 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.listafarma_list.addItems(lista)
 
     def enviarbod(self):
-        elegido = self.farmabodega_list.currentItem().text()
-        self.db.hset(elegido, "departamento", "bodega")
+        elegido = str(self.farmabodega_list.currentItem().text()
+                      ).replace(" ", "")
+        print(str(elegido) == "per_0000000000002")
+        choosen = self.db.hgetall(elegido)
+        choosen["departamento"] = "bodega"
+        self.db.hmset(elegido, choosen)
 
     def get_farmacias_lista(self):
         self.eliminarfarm_cb.clear()
@@ -228,6 +264,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.borrarsocio_cb.clear()
         self.eliminarprofarm_cb.clear()
         self.despedirfarma_cb.clear()
+        self.listarsociofarm_cb.clear()
         "agarrar las farmacias que han sido creadas por dicho dueno"
         length = self.db.llen("farmacias")
         lista = []
@@ -249,6 +286,7 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         self.borrarsocio_cb.addItems(lista)
         self.eliminarprofarm_cb.addItems(lista)
         self.despedirfarma_cb.addItems(lista)
+        self.listarsociofarm_cb.addItems(lista)
 
     def get_empleados(self):
         self.farmabodega_list.clear()
@@ -287,9 +325,13 @@ class MainWindowFarmacia(QtGui.QMainWindow):
         )
         self.empleados_bt.clicked.connect(partial(self.despedir_get))
         self.borrarfarma_bt.clicked.connect(partial(self.despedir))
-        self.obtenerempleados_bt.clicked.connect(partial(self.despedir_get_list))
+        self.obtenerempleados_bt.clicked.connect(
+            partial(self.despedir_get_list))
         self.enviarbod_bt.clicked.connect(partial(self.enviarbod))
         self.obtenerenv_bt.clicked.connect(partial(self.get_empleados))
+        self.cargarsocio_bt.clicked.connect(partial(self.get_sociosfarma))
+        self.cargarlistsocio_bt.clicked.connect(partial(self.get_socios))
+        self.addsocio_bt.clicked.connect(partial(self.add_socios))
 
 
 if __name__ == "__main__":

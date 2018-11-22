@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -121,8 +121,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>365</height>
+             <width>229</width>
+             <height>49</height>
             </rect>
            </property>
            <attribute name="label">
@@ -325,15 +325,15 @@
         <item>
          <widget class="QToolBox" name="farmaceuticos_toolbox">
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="page">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>334</height>
+             <width>189</width>
+             <height>103</height>
             </rect>
            </property>
            <attribute name="label">
@@ -375,8 +375,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>334</height>
+             <width>345</width>
+             <height>95</height>
             </rect>
            </property>
            <attribute name="label">
@@ -417,8 +417,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>710</width>
-             <height>334</height>
+             <width>259</width>
+             <height>221</height>
             </rect>
            </property>
            <property name="accessibleName">
@@ -523,7 +523,7 @@
         <item row="0" column="0">
          <widget class="QToolBox" name="toolBox">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="widget">
            <property name="geometry">
@@ -531,7 +531,7 @@
              <x>0</x>
              <y>0</y>
              <width>710</width>
-             <height>396</height>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
@@ -551,6 +551,13 @@
                <widget class="QComboBox" name="addsociofarm_cb"/>
               </item>
               <item>
+               <widget class="QPushButton" name="cargarsocio_bt">
+                <property name="text">
+                 <string>Cargar Lista</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QPushButton" name="addsocio_bt">
                 <property name="text">
                  <string>Add Socio</string>
@@ -562,19 +569,76 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_19">
               <item>
-               <widget class="QTableWidget" name="anadirsocio_table"/>
+               <widget class="QListWidget" name="anadirsocio_list"/>
               </item>
              </layout>
             </item>
            </layout>
+          </widget>
+          <widget class="QWidget" name="page_10">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>710</width>
+             <height>365</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Listar Socio</string>
+           </attribute>
+           <widget class="QWidget" name="verticalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>9</y>
+              <width>701</width>
+              <height>101</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_26">
+             <item>
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Farmacia:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="listarsociofarm_cb"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="cargarlistsocio_bt">
+               <property name="text">
+                <string>Cargar Lista</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="verticalLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>120</y>
+              <width>701</width>
+              <height>231</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_31">
+             <item>
+              <widget class="QListWidget" name="listarsocio_list"/>
+             </item>
+            </layout>
+           </widget>
           </widget>
           <widget class="QWidget" name="page_2">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>157</width>
-             <height>186</height>
+             <width>710</width>
+             <height>365</height>
             </rect>
            </property>
            <attribute name="label">
