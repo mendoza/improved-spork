@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="widget">
        <property name="accessibleName">
@@ -324,6 +324,177 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="widget">
+       <attribute name="title">
+        <string>Socios</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="toolBox">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="widget">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>710</width>
+             <height>365</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Añadir Socio</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_27">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>Farmacia</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="addsociofarm_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="cargarsocio_bt">
+                <property name="text">
+                 <string>Cargar Lista</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="addsocio_bt">
+                <property name="text">
+                 <string>Add Socio</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QListWidget" name="anadirsocio_list"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_10">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>710</width>
+             <height>365</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Listar Socio</string>
+           </attribute>
+           <widget class="QWidget" name="verticalLayoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>9</y>
+              <width>701</width>
+              <height>101</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_26">
+             <item>
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Farmacia:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="listarsociofarm_cb"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="cargarlistsocio_bt">
+               <property name="text">
+                <string>Cargar Lista</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="verticalLayoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>120</y>
+              <width>701</width>
+              <height>231</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_31">
+             <item>
+              <widget class="QListWidget" name="listarsocio_list"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>710</width>
+             <height>365</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Borrar Socio</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>Farmacia:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="borrarsocio_cb"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="listaborrar_bt">
+                <property name="text">
+                 <string>Cargar Lista</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="borrarsocio_bt">
+                <property name="text">
+                 <string>Eliminar Farmacia</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QListWidget" name="borrarsocio_list"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Farmaceuticos</string>
@@ -513,177 +684,6 @@
                  <string>BorrarFarmaceutico</string>
                 </property>
                </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="widget">
-       <attribute name="title">
-        <string>Socios</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
-         <widget class="QToolBox" name="toolBox">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="widget">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>710</width>
-             <height>365</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Añadir Socio</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_27">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_17">
-              <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>Farmacia</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="addsociofarm_cb"/>
-              </item>
-              <item>
-               <widget class="QPushButton" name="cargarsocio_bt">
-                <property name="text">
-                 <string>Cargar Lista</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="addsocio_bt">
-                <property name="text">
-                 <string>Add Socio</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_19">
-              <item>
-               <widget class="QListWidget" name="anadirsocio_list"/>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="page_10">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>710</width>
-             <height>365</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Listar Socio</string>
-           </attribute>
-           <widget class="QWidget" name="verticalLayoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>9</y>
-              <width>701</width>
-              <height>101</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_26">
-             <item>
-              <widget class="QLabel" name="label_14">
-               <property name="text">
-                <string>Farmacia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="listarsociofarm_cb"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="cargarlistsocio_bt">
-               <property name="text">
-                <string>Cargar Lista</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="verticalLayoutWidget_2">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>120</y>
-              <width>701</width>
-              <height>231</height>
-             </rect>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_31">
-             <item>
-              <widget class="QListWidget" name="listarsocio_list"/>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-          <widget class="QWidget" name="page_2">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>710</width>
-             <height>365</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Borrar Socio</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_4">
-            <item row="0" column="0">
-             <layout class="QVBoxLayout" name="verticalLayout">
-              <item>
-               <widget class="QLabel" name="label_12">
-                <property name="text">
-                 <string>Farmacia:</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="borrarsocio_cb"/>
-              </item>
-              <item>
-               <widget class="QPushButton" name="listaborrar_bt">
-                <property name="text">
-                 <string>Cargar Lista</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="borrarsocio_bt">
-                <property name="text">
-                 <string>Eliminar Farmacia</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_4">
-              <item>
-               <widget class="QListWidget" name="borrarsocio_list"/>
               </item>
              </layout>
             </item>

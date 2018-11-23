@@ -17,18 +17,6 @@ class MainWindowBodega(QtGui.QMainWindow):
             lista = lista.replace("[","")
             lista = lista.replace("]","")
             lista = lista.replace("\'","") 
-            #OCUPAMOS ALGUIEN DE BODEGA Y OCUPAS QUE HAGAN UN PEDIDO :v CREO NO ESTOY SEGURO PARA QUE HICE ESTO :v
-            # DECILE A MATA QUE HICE TABLEWIDGET... QUE LE CAMBIE A ALGO AHI
-            #BASICAMENTE ESTO CONSIGUE DONDE TRABAJA EL MAN Y LUEGO AGREGA LOS PRODUCTOS DE AHI :v
-            #decime el nombre de la tabla para cambiar las variables probodega_tb
-            #le puedo dar push, me estoy muriendoxdsda PERO CAMBIA LA HORA
-            #no hemso terminado...
-            #SOLO UN POCO MAS CHIOCOS, SI SE PUEDE -SANCHEZ
-            #VAMOS PERROS
-            #DEJEMOS QUE ESTOS SE VAYAN CON EL PUSH PARA RECORDAR ESTE MOMENTO JAJAJAJ
-            #PERDIMOS A MATA, HOUSTON TENEMS PROBLEMAS
-            #QUE PASO QUE 
-            #Se habra dormido sobre el teclado?
             lista = lista.split(",")
             if self.ident in lista:
                 farmacias.append(index)
